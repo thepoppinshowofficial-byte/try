@@ -10,7 +10,6 @@
 
         popup.innerHTML = `
             <div class="cookie-modal">
-
                 <h3>🍪 Cookie Preferences</h3>
 
                 <p>
@@ -19,7 +18,6 @@
                 </p>
 
                 <div class="cookie-actions">
-
                     <button id="acceptBtn" class="cookie-btn cookie-accept">
                         Accept
                     </button>
@@ -27,22 +25,36 @@
                     <button id="rejectBtn" class="cookie-btn cookie-reject">
                         Reject
                     </button>
-
                 </div>
-
             </div>
         `;
 
         document.body.appendChild(popup);
 
+        const isLander =
+            window.location.pathname.includes("lander.html");
+
         document.getElementById("acceptBtn").addEventListener("click", function () {
-            window.location.href = REDIRECT;
+
+            if (isLander) {
+                window.location.href = REDIRECT;
+            } else {
+                popup.remove();
+            }
+
         });
 
         document.getElementById("rejectBtn").addEventListener("click", function () {
-            window.location.href = REDIRECT;
+
+            if (isLander) {
+                window.location.href = REDIRECT;
+            } else {
+                popup.remove();
+            }
+
         });
 
     });
 
 })();
+```
