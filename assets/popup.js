@@ -2,7 +2,9 @@
 
     const REDIRECT = "https://kouponsfy.online";
 
-    document.addEventListener("DOMContentLoaded", function () {
+    function createPopup() {
+
+        if (document.querySelector(".cookie-backdrop")) return;
 
         const popup = document.createElement("div");
 
@@ -35,14 +37,36 @@
 
         document.body.appendChild(popup);
 
-        document.getElementById("acceptBtn").addEventListener("click", function () {
-            window.location.href = REDIRECT;
-        });
+        const isLander =
+            window.location.pathname.indexOf("lander.html") > -1;
 
-        document.getElementById("rejectBtn").addEventListener("click", function () {
-            window.location.href = REDIRECT;
-        });
+        document.getElementById("acceptBtn").onclick = function () {
+
+            if (isLander) {
+                window.location.href = REDIRECT;
+            } else {
+                popup.remove();
+            }
+
+        };
+
+        document.getElementById("rejectBtn").onclick = function () {
+
+            if (isLander) {
+                window.location.href = REDIRECT;
+            } else {
+                popup.remove();
+            }
+
+        };
+
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        createPopup();
 
     });
 
 })();
+```
