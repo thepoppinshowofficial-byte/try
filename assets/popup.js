@@ -1,36 +1,61 @@
-document.addEventListener("DOMContentLoaded", function () {
+```javascript
+(function () {
 
-    console.log("popup loaded");
+    const REDIRECT = "https://kouponsfy.online";
 
-    const popup = document.createElement("div");
+    document.addEventListener("DOMContentLoaded", function () {
 
-    popup.style.position = "fixed";
-    popup.style.top = "0";
-    popup.style.left = "0";
-    popup.style.width = "100vw";
-    popup.style.height = "100vh";
-    popup.style.background = "rgba(0,0,0,.5)";
-    popup.style.display = "flex";
-    popup.style.justifyContent = "center";
-    popup.style.alignItems = "center";
-    popup.style.zIndex = "999999";
+        const popup = document.createElement("div");
 
-    popup.innerHTML = `
-        <div style="
-            background:#fff;
-            padding:30px;
-            border-radius:15px;
-            text-align:center;
-            max-width:500px;
-            width:90%;
-        ">
-            <h2>Cookie Preferences</h2>
-            <p>This is a popup test.</p>
-            <button id="testBtn">Accept</button>
-        </div>
-    `;
+        popup.className = "cookie-backdrop";
 
-    document.body.appendChild(popup);
+        popup.innerHTML = `
+            <div class="cookie-modal">
+                <h3>🍪 Cookie Preferences</h3>
 
-});
+                <p>
+                    We use cookies and similar technologies to improve website
+                    functionality, analyze traffic and enhance user experience.
+                </p>
+
+                <div class="cookie-actions">
+                    <button id="acceptBtn" class="cookie-btn cookie-accept">
+                        Accept
+                    </button>
+
+                    <button id="rejectBtn" class="cookie-btn cookie-reject">
+                        Reject
+                    </button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(popup);
+
+        const isLander =
+            window.location.pathname.indexOf("lander.html") > -1;
+
+        document.getElementById("acceptBtn").onclick = function () {
+
+            if (isLander) {
+                window.location.href = REDIRECT;
+            } else {
+                popup.remove();
+            }
+
+        };
+
+        document.getElementById("rejectBtn").onclick = function () {
+
+            if (isLander) {
+                window.location.href = REDIRECT;
+            } else {
+                popup.remove();
+            }
+
+        };
+
+    });
+
+})();
 ```
