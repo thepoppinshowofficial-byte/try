@@ -1,27 +1,22 @@
-```css
-/* COOKIE OVERLAY */
-
 .cookie-backdrop{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    position:fixed !important;
+    inset:0 !important;
 
-    /* transparent dark overlay so bg.jpg is visible */
-    background:rgba(0,0,0,0.45);
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    width:100vw !important;
+    height:100vh !important;
+
+    background:rgba(0,0,0,.65);
 
     z-index:999999;
 }
 
-/* POPUP BOX */
-
 .cookie-modal{
-    background:#ffffff;
+    background:#fff;
+
     width:90%;
     max-width:550px;
 
@@ -32,6 +27,8 @@
     text-align:center;
 
     box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+    margin:0 auto;
 }
 
 .cookie-modal h3{
@@ -47,8 +44,6 @@
     margin-bottom:25px;
 }
 
-/* BUTTONS */
-
 .cookie-actions{
     display:flex;
     justify-content:center;
@@ -62,24 +57,17 @@
     border-radius:12px;
     cursor:pointer;
     font-weight:600;
-    transition:.3s;
-}
-
-.cookie-btn:hover{
-    transform:translateY(-2px);
 }
 
 .cookie-accept{
     background:#2563eb;
-    color:#ffffff;
+    color:#fff;
 }
 
 .cookie-reject{
     background:#e5e7eb;
     color:#111827;
 }
-
-/* MOBILE */
 
 @media(max-width:576px){
 
