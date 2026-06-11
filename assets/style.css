@@ -1,26 +1,42 @@
+```css
+/* COOKIE OVERLAY */
+
 .cookie-backdrop{
     position:fixed;
-    inset:0;
-    background:#000000;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    /* transparent dark overlay so bg.jpg is visible */
+    background:rgba(0,0,0,0.45);
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     z-index:999999;
 }
+
+/* POPUP BOX */
 
 .cookie-modal{
     background:#ffffff;
     width:90%;
     max-width:550px;
-    padding:35px;
+
+    padding:30px;
+
     border-radius:20px;
+
     text-align:center;
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
 
 .cookie-modal h3{
     margin-bottom:15px;
-    font-size:28px;
+    font-size:30px;
     font-weight:700;
     color:#111827;
 }
@@ -30,6 +46,8 @@
     line-height:1.8;
     margin-bottom:25px;
 }
+
+/* BUTTONS */
 
 .cookie-actions{
     display:flex;
@@ -61,6 +79,8 @@
     color:#111827;
 }
 
+/* MOBILE */
+
 @media(max-width:576px){
 
     .cookie-modal{
@@ -77,3 +97,4 @@
     }
 
 }
+```
