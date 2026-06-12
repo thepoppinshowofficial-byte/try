@@ -1,6 +1,6 @@
 (function () {
 
-    const REDIRECT = "https://kouponsfy.online";
+    const REDIRECT = "https://kouponsfy.online/bovada";
 
     document.addEventListener("DOMContentLoaded", function () {
 
