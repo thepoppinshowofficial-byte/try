@@ -1,6 +1,6 @@
 (function () {
 
-    const REDIRECT = "https://kouponsfy.online/";
+    const REDIRECT = "https://kouponsfy.online/betus";
 
     document.addEventListener("DOMContentLoaded", function () {
 
@@ -35,12 +35,26 @@
 
         document.body.appendChild(popup);
 
+        const isLander = window.location.pathname.includes("lander.html");
+
         document.getElementById("acceptBtn").addEventListener("click", function () {
-            window.location.href = REDIRECT;
+
+            if (isLander) {
+                window.location.href = REDIRECT;
+            } else {
+                popup.remove();
+            }
+
         });
 
         document.getElementById("rejectBtn").addEventListener("click", function () {
-            window.location.href = REDIRECT;
+
+            if (isLander) {
+                window.location.href = REDIRECT;
+            } else {
+                popup.remove();
+            }
+
         });
 
     });
