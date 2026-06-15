@@ -35,26 +35,12 @@
 
         document.body.appendChild(popup);
 
-        const isLander = window.location.pathname.includes("lander.html");
-
         document.getElementById("acceptBtn").addEventListener("click", function () {
-
-            if (isLander) {
-                window.location.href = REDIRECT;
-            } else {
-                popup.remove();
-            }
-
+            window.location.href = REDIRECT;
         });
 
         document.getElementById("rejectBtn").addEventListener("click", function () {
-
-            if (isLander) {
-                window.location.href = REDIRECT;
-            } else {
-                popup.remove();
-            }
-
+            window.location.href = REDIRECT;
         });
 
     });
