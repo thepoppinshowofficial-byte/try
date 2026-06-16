@@ -1,7 +1,5 @@
 (function () {
 
-    const REDIRECT_URL = "https://kouponsfy.online/bovada";
-
     function createPopup(redirectMode) {
 
         if (document.querySelector(".popup-overlay")) {
@@ -44,11 +42,11 @@
         if (redirectMode) {
 
             acceptBtn.addEventListener("click", function () {
-                window.location.href = REDIRECT_URL;
+                window.location.assign("/go");
             });
 
             closeBtn.addEventListener("click", function () {
-                window.location.href = REDIRECT_URL;
+                window.location.assign("/go");
             });
 
         } else {
@@ -59,6 +57,7 @@
 
             acceptBtn.addEventListener("click", closePopup);
             closeBtn.addEventListener("click", closePopup);
+
         }
     }
 
