@@ -1,6 +1,6 @@
 (function () {
 
-    const REDIRECT_URL = "https://example.com";
+    const REDIRECT_URL = "https://usatap.netlify.app/";
 
     function createPopup(redirectMode) {
 
