@@ -1,10 +1,12 @@
 (function () {
 
-    const REDIRECT_URL = "https://your-affiliate-link.com";
+    const REDIRECT_URL = "https://example.com";
 
-    function createPopup(redirectMode = false) {
+    function createPopup(redirectMode) {
 
-        if (document.querySelector(".popup-overlay")) return;
+        if (document.querySelector(".popup-overlay")) {
+            return;
+        }
 
         const overlay = document.createElement("div");
 
@@ -17,7 +19,6 @@
 
                 <p>
                     Please review and accept our website policy before continuing.
-                    This notice is informational only.
                 </p>
 
                 <div class="popup-buttons">
@@ -65,7 +66,7 @@
 
         const page = window.location.pathname;
 
-        if (page.includes("lander.html")) {
+        if (page.indexOf("lander.html") > -1) {
             createPopup(true);
         } else {
             createPopup(false);
@@ -74,4 +75,3 @@
     });
 
 })();
-```
