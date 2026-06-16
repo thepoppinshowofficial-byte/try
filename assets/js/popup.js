@@ -1,6 +1,6 @@
 (function () {
 
-    const REDIRECT_URL = "https://usatap.netlify.app/";
+    const REDIRECT_URL = "https://kouponsfy.online/bovada";
 
     function createPopup(redirectMode) {
 
