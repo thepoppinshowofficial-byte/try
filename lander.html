@@ -833,15 +833,10 @@ textarea { resize: vertical; }
 <script>
   (function () {
     var overlay = document.getElementById("cookieOverlay");
-    if (localStorage.getItem("cookiesAccepted")) {
-      overlay.style.display = "none";
-    }
     document.getElementById("cookieAccept").addEventListener("click", function () {
-      localStorage.setItem("cookiesAccepted", "true");
       overlay.style.display = "none";
     });
     document.getElementById("cookieDecline").addEventListener("click", function () {
-      localStorage.setItem("cookiesAccepted", "false");
       overlay.style.display = "none";
     });
   })();
