@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="New to the NBA? This complete beginner guide covers rules, positions, shot clock, fouls, seasons and how to follow the game as a US basketball fan."/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:title" content="New to NBA? Complete Beginner Guide — USATap"/>
+<meta property="og:description" content="Rules, positions, shot clock, fouls and how the season works — everything a brand-new basketball fan needs to know."/>
+<title>New to NBA? Complete Beginner Guide — USATap</title>
+<link rel="stylesheet" href="assets/style.css"/>
+<style>
+/* PAGE HERO */
+.page-hero{background:linear-gradient(155deg,var(--navy) 0%,var(--blue) 60%,#2a5abf 100%);color:#fff;padding:3.5rem 2rem 3rem;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 80px),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 80px);pointer-events:none;}
+.page-hero::after{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(200,16,46,.12);pointer-events:none;}
+.page-hero-inner{max-width:var(--max);margin:0 auto;position:relative;}
+.page-eye{font-family:Arial,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;}
+.page-hero h1{font-family:'Arial Black',Impact,sans-serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.08;letter-spacing:-1px;margin-bottom:.8rem;}
+.page-hero p{color:rgba(255,255,255,.75);font-size:.98rem;max-width:580px;line-height:1.7;}
+
+/* BREADCRUMB */
+.breadcrumb{background:var(--blue-light);border-bottom:1px solid var(--border);padding:.55rem 2rem;font-family:Arial,sans-serif;font-size:.78rem;color:var(--muted);}
+.breadcrumb a{color:var(--blue);}
+.breadcrumb span{margin:0 .4rem;color:#bbc;}
+
+/* LAYOUT */
+.page-wrap{max-width:var(--max);margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 300px;gap:3.5rem;align-items:start;}
+main h2{font-family:'Arial Black',sans-serif;font-size:1.2rem;font-weight:900;color:var(--navy);margin:2.5rem 0 .8rem;letter-spacing:-.3px;}
+main h2:first-child{margin-top:0;}
+main h3{font-family:Arial,sans-serif;font-size:.98rem;font-weight:700;color:var(--text);margin:1.4rem 0 .5rem;}
+main p{font-size:.93rem;color:var(--muted);margin-bottom:1rem;line-height:1.75;}
+main ul,main ol{padding-left:1.4rem;margin-bottom:1rem;}
+main li{font-size:.9rem;color:var(--muted);margin-bottom:.38rem;line-height:1.65;}
+main li strong{color:var(--text);}
+
+/* RULE CARDS */
+.rule-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin:1.5rem 0;}
+.rule-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.4rem;border-top:3px solid var(--red);}
+.rule-card.blue-top{border-top-color:var(--blue);}
+.rule-card.gold-top{border-top-color:var(--gold);}
+.rule-card.navy-top{border-top-color:var(--navy);}
+.rule-num{font-family:'Arial Black',sans-serif;font-size:1.8rem;font-weight:900;color:var(--red);line-height:1;margin-bottom:.4rem;}
+.rule-card.blue-top .rule-num{color:var(--blue);}
+.rule-card.gold-top .rule-num{color:var(--gold-dark);}
+.rule-card.navy-top .rule-num{color:var(--navy);}
+.rule-card h3{font-family:Arial,sans-serif;font-size:.92rem;font-weight:700;color:var(--text);margin:0 0 .4rem;}
+.rule-card p{font-size:.84rem;color:var(--muted);line-height:1.6;margin:0;}
+
+/* POSITIONS TABLE */
+.pos-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-family:Arial,sans-serif;font-size:.85rem;}
+.pos-table th{background:var(--navy);color:#fff;padding:.65rem 1rem;text-align:left;font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;}
+.pos-table td{padding:.6rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);}
+.pos-table tr:last-child td{border-bottom:none;}
+.pos-table tr:nth-child(even) td{background:var(--blue-light);}
+.pos-table td:first-child{font-weight:700;color:var(--navy);}
+
+/* CHECKLIST */
+.checklist{background:var(--blue-light);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:8px;padding:1.2rem 1.5rem;margin:1.8rem 0;}
+.checklist h3{font-family:Arial,sans-serif;font-weight:700;font-size:.84rem;color:var(--navy);margin:0 0 .8rem;text-transform:uppercase;letter-spacing:.06em;}
+.checklist ul{padding-left:1.2rem;margin:0;}
+.checklist li{font-size:.87rem;color:var(--muted);margin-bottom:.35rem;line-height:1.6;}
+
+/* HOW TO BOX */
+.how-box{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:1.2rem 1.5rem;margin:1.8rem 0;}
+.how-box h3{font-family:Arial,sans-serif;font-weight:700;font-size:.84rem;color:var(--navy);margin:0 0 .8rem;}
+.how-box ol{padding-left:1.2rem;margin:0;}
+.how-box li{font-size:.87rem;color:var(--muted);margin-bottom:.38rem;line-height:1.65;}
+.more-link{display:inline-block;margin-top:.9rem;font-family:Arial,sans-serif;font-size:.82rem;font-weight:700;color:var(--red);}
+
+/* TIMELINE */
+.timeline{margin:1.5rem 0;display:flex;flex-direction:column;gap:0;}
+.tl-item{display:flex;gap:1.2rem;position:relative;padding-bottom:1.4rem;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{content:'';position:absolute;left:18px;top:36px;bottom:0;width:2px;background:var(--border);}
+.tl-item:last-child::before{display:none;}
+.tl-dot{width:38px;height:38px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;z-index:1;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+.tl-body{padding-top:.4rem;}
+.tl-body h4{font-family:Arial,sans-serif;font-weight:700;font-size:.92rem;color:var(--navy);margin-bottom:.25rem;}
+.tl-body p{font-size:.86rem;color:var(--muted);line-height:1.6;margin:0;}
+.tl-month{font-family:Arial,sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:.15rem;}
+
+/* SIDEBAR */
+aside{position:sticky;top:calc(64px + 1.5rem);}
+.sidebar-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.3rem;margin-bottom:1.2rem;}
+.sidebar-card h4{font-family:'Arial Black',sans-serif;font-size:.9rem;font-weight:900;color:var(--navy);margin:0 0 .8rem;letter-spacing:-.2px;}
+.sidebar-card p{font-size:.82rem;color:var(--muted);line-height:1.65;margin-bottom:.7rem;}
+.sidebar-card ul{list-style:none;padding:0;}
+.sidebar-card li{font-size:.82rem;padding:.3rem 0;border-bottom:1px solid var(--border);}
+.sidebar-card li:last-child{border-bottom:none;}
+.sidebar-card a{color:var(--blue);font-size:.82rem;}
+.tag-wrap{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.5rem;}
+.tag{background:var(--blue-light);color:var(--navy);font-family:Arial,sans-serif;font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:3px;}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2rem;font-family:Arial,sans-serif;font-size:.82rem;margin-top:4rem;}
+.footer-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;}
+.footer-brand p{font-size:.82rem;color:rgba(255,255,255,.42);margin-top:.5rem;line-height:1.65;}
+.footer-col h4{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.38);margin-bottom:.9rem;font-weight:700;}
+.footer-col ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.4rem;}
+.footer-col a{color:rgba(255,255,255,.6);font-size:.82rem;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{max-width:var(--max);margin:1.5rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.09);font-size:.75rem;color:rgba(255,255,255,.3);text-align:center;}
+
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .page-wrap{grid-template-columns:1fr;}
+  aside{position:static;}
+  .rule-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+  .page-wrap{padding:2.5rem 1.5rem;}
+}
+@media(max-width:600px){
+  .footer-inner{grid-template-columns:1fr;}
+  .page-hero{padding:2.5rem 1.5rem 2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-badge">🏀</span>USATap</a>
+    <ul class="nav-links">
+      <li><a href="start-here.html">Start Here</a></li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="standings.html">Standings</a></li>
+      <li><a href="analysis.html">Analysis</a></li>
+      <li><a href="fantasy.html">Fantasy</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="start-here.html" class="nav-cta">Start Here</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eye">Beginner Guide</div>
+    <h1>New to the NBA? Start here.</h1>
+    <p>Rules, positions, shot clock, fouls and how a full season works — everything a brand-new basketball fan needs to follow the game with confidence.</p>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">Home</a><span>›</span>Start Here</div>
+
+<!-- CONTENT -->
+<div class="page-wrap">
+<main>
+
+  <h2>What is the NBA?</h2>
+  <p>The National Basketball Association (NBA) is the premier professional basketball league in the United States and Canada. Founded in 1946, it now consists of 30 franchises split equally between the Eastern Conference and the Western Conference. The NBA season runs from October through June, ending with the NBA Finals — a best-of-7 series between the East and West champions.</p>
+  <p>Basketball is played on a rectangular hardwood court with a hoop at each end set 10 feet off the ground. Two teams of five players compete to score more points than the other across four 12-minute quarters.</p>
+
+  <h2>The key rules — explained simply</h2>
+  <div class="rule-grid">
+    <div class="rule-card">
+      <div class="rule-num">24</div>
+      <h3>Shot Clock</h3>
+      <p>The offensive team has 24 seconds to attempt a shot that hits the rim. Failure to do so turns the ball over to the opposition. It is the rule that keeps NBA basketball fast-paced.</p>
+    </div>
+    <div class="rule-card blue-top">
+      <div class="rule-num">3</div>
+      <h3>Point Values</h3>
+      <p>Shots inside the three-point arc score 2 points. Shots beyond the arc score 3 points. Free throws, awarded after certain fouls, are worth 1 point each.</p>
+    </div>
+    <div class="rule-card gold-top">
+      <div class="rule-num">6</div>
+      <h3>Fouls Per Player</h3>
+      <p>Each player is allowed 6 personal fouls before being disqualified from the game. Teams enter the penalty (free throws awarded) after the opposition commits their 5th team foul in a quarter.</p>
+    </div>
+    <div class="rule-card navy-top">
+      <div class="rule-num">8</div>
+      <h3>Seconds Rule</h3>
+      <p>Once a team gains possession in the backcourt, they have 8 seconds to advance the ball past the half-court line. Failure results in a turnover. Keeps teams from stalling with the ball.</p>
+    </div>
+  </div>
+
+  <h2>The five positions</h2>
+  <p>Each team fields five players on the court at any given time. While modern NBA basketball is increasingly positionless, understanding the traditional roles helps you follow the game.</p>
+  <table class="pos-table">
+    <thead>
+      <tr><th>#</th><th>Position</th><th>Role on the Court</th><th>Key Skill</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Point Guard (PG)</td><td>Runs the offense, distributes the ball, sets up teammates</td><td>Passing & court vision</td></tr>
+      <tr><td>2</td><td>Shooting Guard (SG)</td><td>Primary perimeter scorer, often takes three-pointers</td><td>Shooting & scoring</td></tr>
+      <tr><td>3</td><td>Small Forward (SF)</td><td>Versatile two-way player, scores from multiple areas</td><td>Versatility & athleticism</td></tr>
+      <tr><td>4</td><td>Power Forward (PF)</td><td>Scores in the paint and mid-range, physical defender</td><td>Rebounding & post play</td></tr>
+      <tr><td>5</td><td>Center (C)</td><td>Rim protector, rebounder, scores near the basket</td><td>Rim protection & size</td></tr>
+    </tbody>
+  </table>
+
+  <h2>How a game is structured</h2>
+  <p>An NBA game consists of four 12-minute quarters. If the score is tied at the end of regulation, the game goes to a 5-minute overtime period — and continues with additional overtime periods until one team leads at the buzzer.</p>
+  <ul>
+    <li><strong>Tip-off:</strong> A jump ball between two players at center court starts each game and each overtime.</li>
+    <li><strong>Halftime:</strong> A 15-minute break between the 2nd and 3rd quarters.</li>
+    <li><strong>Timeouts:</strong> Each team gets 7 timeouts per game — coaches call these to draw up plays or stop momentum.</li>
+    <li><strong>Reviews:</strong> Coaches can challenge one call per game. Officials can also review certain plays in the last two minutes.</li>
+  </ul>
+
+  <h2>How the NBA season works</h2>
+  <p>The NBA season is one of the longest in professional sports. Here is how it unfolds from October to June every year.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">🏀</div>
+      <div class="tl-body">
+        <div class="tl-month">October – April</div>
+        <h4>Regular Season</h4>
+        <p>Each of the 30 teams plays 82 games — 41 home and 41 away. Teams face each conference opponent multiple times throughout the season. Every game counts toward the standings.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">⚡</div>
+      <div class="tl-body">
+        <div class="tl-month">April</div>
+        <h4>Play-In Tournament</h4>
+        <p>Teams ranked 7th through 10th in each conference compete in a mini-tournament to fill the final two playoff spots per conference. One of the most exciting new additions to the NBA calendar.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🏆</div>
+      <div class="tl-body">
+        <div class="tl-month">April – June</div>
+        <h4>NBA Playoffs</h4>
+        <p>16 teams (8 per conference) compete in four rounds of best-of-7 series. The top seed faces the 8th seed, 2nd faces 7th, and so on. You must win 4 games in a series to advance.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🥇</div>
+      <div class="tl-body">
+        <div class="tl-month">June</div>
+        <h4>NBA Finals</h4>
+        <p>The Eastern Conference champion faces the Western Conference champion in the ultimate best-of-7 series. The winner receives the Larry O'Brien Championship Trophy — the most coveted prize in professional basketball.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Common basketball terms</h2>
+  <ul>
+    <li><strong>Turnover:</strong> When the offensive team loses possession without attempting a shot — via a bad pass, a stolen ball or stepping out of bounds.</li>
+    <li><strong>Double-double:</strong> When a player scores double figures in two statistical categories (e.g. 20 points and 10 rebounds).</li>
+    <li><strong>Triple-double:</strong> Double figures in three categories — usually points, rebounds and assists. A sign of an elite all-around player.</li>
+    <li><strong>Fast break:</strong> When a team quickly advances the ball to get an easy scoring opportunity before the defense can set up.</li>
+    <li><strong>Pick and roll:</strong> An offensive play where a player sets a screen (pick) on the ball handler's defender, then rolls toward the basket to receive a pass.</li>
+    <li><strong>Flagrant foul:</strong> An unnecessarily hard or dangerous foul. Flagrant 1 results in free throws and possession. Flagrant 2 means automatic ejection.</li>
+  </ul>
+
+  <div class="checklist">
+    <h3>New fan checklist</h3>
+    <ul>
+      <li>Pick one team from the Eastern Conference and one from the Western Conference to follow</li>
+      <li>Watch your first game focusing purely on the shot clock — see how it changes strategy</li>
+      <li>Download the NBA app for live scores, highlights and game alerts</li>
+      <li>Read the <a href="standings.html">Standings guide</a> to understand where teams are in the race</li>
+      <li>Join a free fantasy basketball league to make every player's performance personal</li>
+    </ul>
+  </div>
+
+  <div class="how-box">
+    <h3>Where to go next on USATap</h3>
+    <ol>
+      <li>Browse all <a href="teams.html">30 NBA Teams</a> to find your franchise.</li>
+      <li>Check the <a href="standings.html">Standings</a> to follow the playoff race.</li>
+      <li>Read the <a href="analysis.html">Player Analysis</a> guide to understand advanced stats.</li>
+      <li>Set up a <a href="fantasy.html">Fantasy Basketball</a> team to stay engaged all season.</li>
+    </ol>
+    <a class="more-link" href="teams.html">Browse all 30 teams →</a>
+  </div>
+
+</main>
+
+<!-- SIDEBAR -->
+<aside>
+  <div class="sidebar-card">
+    <h4>In this guide</h4>
+    <ul>
+      <li><a href="#main">What is the NBA?</a></li>
+      <li><a href="#main">The key rules</a></li>
+      <li><a href="#main">Five positions</a></li>
+      <li><a href="#main">Game structure</a></li>
+      <li><a href="#main">The season</a></li>
+      <li><a href="#main">Common terms</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <h4>Related guides</h4>
+    <ul>
+      <li><a href="teams.html">All 30 NBA Teams</a></li>
+      <li><a href="standings.html">Conference Standings</a></li>
+      <li><a href="analysis.html">Player Stats Explained</a></li>
+      <li><a href="fantasy.html">Fantasy Basketball</a></li>
+      <li><a href="schedule.html">Schedule & TV Guide</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <h4>Quick tags</h4>
+    <div class="tag-wrap">
+      <span class="tag">NBA Rules</span>
+      <span class="tag">Beginners</span>
+      <span class="tag">Shot Clock</span>
+      <span class="tag">Playoffs</span>
+      <span class="tag">Positions</span>
+      <span class="tag">Season Guide</span>
+    </div>
+  </div>
+  <div class="sidebar-card" style="background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border:none;">
+    <h4 style="color:#fff;">Ready to follow the NBA?</h4>
+    <p style="color:rgba(255,255,255,.75);">Browse all 30 teams and find your franchise to support this season.</p>
+    <a href="teams.html" style="display:inline-block;background:var(--red);color:#fff;font-family:Arial,sans-serif;font-weight:700;font-size:.84rem;padding:.6rem 1.2rem;border-radius:4px;margin-top:.2rem;">Browse Teams →</a>
+  </div>
+</aside>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div style="color:#fff;font-family:'Arial Black',sans-serif;font-size:1.05rem;font-weight:900;">🏀 USATap</div>
+      <p>Free NBA guides for American basketball fans.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul>
+      <li><a href="teams.html">NBA Teams</a></li>
+      <li><a href="standings.html">Standings</a></li>
+      <li><a href="analysis.html">Player Analysis</a></li>
+      <li><a href="fantasy.html">Fantasy Basketball</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Guides</h4><ul>
+      <li><a href="start-here.html">Start Here</a></li>
+      <li><a href="schedule.html">Schedule & TV</a></li>
+      <li><a href="about.html">About USATap</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 USATap. Independent fan guide. Not affiliated with or endorsed by the NBA.</div>
+</footer>
+
+<script src="assets/popup.js"></script>
+<script>window.PopupIndex();</script>
+</body>
+</html>
