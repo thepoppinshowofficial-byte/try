@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Complete guide to all 30 NBA teams — Eastern and Western Conference franchises, home arenas, divisions and 2025 season outlook for every team."/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:title" content="All 30 NBA Teams Guide — USATap"/>
+<meta property="og:description" content="Every NBA franchise covered — Eastern and Western Conference teams, divisions, home arenas and season previews."/>
+<title>All 30 NBA Teams Guide — USATap</title>
+<link rel="stylesheet" href="assets/style.css"/>
+<style>
+.page-hero{background:linear-gradient(155deg,var(--navy) 0%,var(--blue) 60%,#2a5abf 100%);color:#fff;padding:3.5rem 2rem 3rem;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 80px),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 80px);pointer-events:none;}
+.page-hero::after{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(200,16,46,.12);pointer-events:none;}
+.page-hero-inner{max-width:var(--max);margin:0 auto;position:relative;}
+.page-eye{font-family:Arial,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;}
+.page-hero h1{font-family:'Arial Black',Impact,sans-serif;font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.08;letter-spacing:-1px;margin-bottom:.8rem;}
+.page-hero p{color:rgba(255,255,255,.75);font-size:.98rem;max-width:580px;line-height:1.7;}
+.breadcrumb{background:var(--blue-light);border-bottom:1px solid var(--border);padding:.55rem 2rem;font-family:Arial,sans-serif;font-size:.78rem;color:var(--muted);}
+.breadcrumb a{color:var(--blue);}
+.breadcrumb span{margin:0 .4rem;color:#bbc;}
+.page-wrap{max-width:var(--max);margin:0 auto;padding:3rem 2rem;}
+
+/* CONFERENCE TABS */
+.conf-tabs{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+.conf-tab{font-family:Arial,sans-serif;font-size:.82rem;font-weight:700;padding:.55rem 1.2rem;border-radius:4px;cursor:pointer;border:2px solid var(--border);background:var(--white);color:var(--muted);transition:all .2s;}
+.conf-tab.active.east{background:var(--navy);color:#fff;border-color:var(--navy);}
+.conf-tab.active.west{background:var(--red);color:#fff;border-color:var(--red);}
+.conf-tab:hover{border-color:var(--blue);color:var(--blue);}
+
+/* CONFERENCE SECTION */
+.conf-section{margin-bottom:4rem;}
+.conf-header{display:flex;align-items:center;gap:1rem;margin-bottom:.6rem;}
+.conf-header h2{font-family:'Arial Black',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:-.5px;margin:0;}
+.conf-badge{font-family:Arial,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:20px;}
+.conf-badge.east{background:var(--navy);color:#fff;}
+.conf-badge.west{background:var(--red);color:#fff;}
+.conf-desc{font-size:.93rem;color:var(--muted);margin-bottom:2rem;line-height:1.7;max-width:680px;}
+
+/* DIVISION */
+.division-label{font-family:Arial,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:2rem 0 1rem;padding-bottom:.5rem;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:.6rem;}
+.division-label::before{content:'';display:block;width:16px;height:2px;background:var(--red);}
+
+/* TEAM CARDS */
+.teams-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1rem;}
+.team-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.team-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.1);}
+.team-card-top{height:90px;display:flex;align-items:center;justify-content:center;position:relative;}
+.team-emoji{font-size:2.6rem;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3));}
+.team-card-body{padding:1rem 1.2rem 1.2rem;}
+.team-name{font-family:'Arial Black',sans-serif;font-size:.98rem;font-weight:900;color:var(--navy);margin-bottom:.15rem;letter-spacing:-.2px;}
+.team-city{font-family:Arial,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.team-facts{display:flex;flex-direction:column;gap:.28rem;}
+.team-fact{font-family:Arial,sans-serif;font-size:.78rem;color:var(--muted);display:flex;justify-content:space-between;gap:.5rem;}
+.team-fact strong{color:var(--text);text-align:right;}
+.team-tag{display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .55rem;border-radius:3px;margin-top:.6rem;}
+.tag-contender{background:#e8f5ee;color:#0f4524;}
+.tag-rebuilding{background:#fce8eb;color:#8b0000;}
+.tag-playoff{background:#e8eef8;color:var(--navy);}
+.tag-watchlist{background:#fff8e8;color:#7a4f00;}
+
+/* QUICK FACTS */
+.quick-facts{background:var(--navy);color:#fff;border-radius:12px;padding:2rem;margin:3rem 0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;}
+.qf-num{font-family:'Arial Black',sans-serif;font-size:2rem;font-weight:900;color:var(--gold);line-height:1;}
+.qf-lab{font-family:Arial,sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-top:.3rem;}
+
+/* SIDEBAR */
+aside{position:sticky;top:calc(64px + 1.5rem);}
+.sidebar-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.3rem;margin-bottom:1.2rem;}
+.sidebar-card h4{font-family:'Arial Black',sans-serif;font-size:.9rem;font-weight:900;color:var(--navy);margin:0 0 .8rem;}
+.sidebar-card ul{list-style:none;padding:0;}
+.sidebar-card li{font-size:.82rem;padding:.3rem 0;border-bottom:1px solid var(--border);}
+.sidebar-card li:last-child{border-bottom:none;}
+.sidebar-card a{color:var(--blue);font-size:.82rem;}
+.tag-wrap{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.5rem;}
+.stag{background:var(--blue-light);color:var(--navy);font-family:Arial,sans-serif;font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:3px;}
+
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-family:Arial,sans-serif;font-size:.84rem;}
+.data-table th{background:var(--navy);color:#fff;padding:.65rem 1rem;text-align:left;font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;}
+.data-table td{padding:.6rem 1rem;border-bottom:1px solid var(--border);color:var(--muted);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:var(--blue-light);}
+.data-table td:first-child{font-weight:700;color:var(--navy);}
+
+/* CHECKLIST */
+.checklist{background:var(--blue-light);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:8px;padding:1.2rem 1.5rem;margin:1.8rem 0;}
+.checklist h3{font-family:Arial,sans-serif;font-weight:700;font-size:.84rem;color:var(--navy);margin:0 0 .8rem;text-transform:uppercase;letter-spacing:.06em;}
+.checklist ul{padding-left:1.2rem;margin:0;}
+.checklist li{font-size:.87rem;color:var(--muted);margin-bottom:.35rem;line-height:1.6;}
+
+footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2rem;font-family:Arial,sans-serif;font-size:.82rem;margin-top:4rem;}
+.footer-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;}
+.footer-brand p{font-size:.82rem;color:rgba(255,255,255,.42);margin-top:.5rem;line-height:1.65;}
+.footer-col h4{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.38);margin-bottom:.9rem;font-weight:700;}
+.footer-col ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.4rem;}
+.footer-col a{color:rgba(255,255,255,.6);font-size:.82rem;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{max-width:var(--max);margin:1.5rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.09);font-size:.75rem;color:rgba(255,255,255,.3);text-align:center;}
+
+@media(max-width:900px){.nav-links{display:none;}.teams-grid{grid-template-columns:1fr 1fr;}.quick-facts{grid-template-columns:repeat(2,1fr);}.footer-inner{grid-template-columns:1fr 1fr;}.page-wrap{padding:2.5rem 1.5rem;}}
+@media(max-width:600px){.teams-grid{grid-template-columns:1fr;}.quick-facts{grid-template-columns:1fr 1fr;}.footer-inner{grid-template-columns:1fr;}.page-hero{padding:2.5rem 1.5rem 2rem;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-badge">🏀</span>USATap</a>
+    <ul class="nav-links">
+      <li><a href="start-here.html">Start Here</a></li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="standings.html">Standings</a></li>
+      <li><a href="analysis.html">Analysis</a></li>
+      <li><a href="fantasy.html">Fantasy</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="start-here.html" class="nav-cta">Start Here</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eye">Teams Guide</div>
+    <h1>All 30 NBA Teams — 2025 Guide</h1>
+    <p>Every franchise in the Eastern and Western Conference — history, home arenas, divisions and what to expect from each team in the 2025 season.</p>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">Home</a><span>›</span>Teams</div>
+
+<div class="page-wrap">
+
+<!-- QUICK FACTS STRIP -->
+<div class="quick-facts">
+  <div><div class="qf-num">30</div><div class="qf-lab">Total Teams</div></div>
+  <div><div class="qf-num">15</div><div class="qf-lab">Eastern Conf.</div></div>
+  <div><div class="qf-num">15</div><div class="qf-lab">Western Conf.</div></div>
+  <div><div class="qf-num">6</div><div class="qf-lab">Divisions</div></div>
+</div>
+
+<!-- EASTERN CONFERENCE -->
+<div class="conf-section">
+  <div class="conf-header">
+    <h2>Eastern Conference</h2>
+    <span class="conf-badge east">East</span>
+  </div>
+  <p class="conf-desc">The Eastern Conference contains 15 teams across three divisions — Atlantic, Central and Southeast. The top 6 teams at the end of the regular season qualify directly for the playoffs, with seeds 7–10 entering the play-in tournament.</p>
+
+  <div class="division-label">Atlantic Division</div>
+  <div class="teams-grid">
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#006532,#007a3d)"><span class="team-emoji">🍀</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Boston Celtics</div>
+        <div class="team-city">Boston, Massachusetts</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>TD Garden</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1946</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>18 titles</strong></div>
+          <div class="team-fact"><span>Division</span><strong>Atlantic</strong></div>
+        </div>
+        <span class="team-tag tag-contender">Contender</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#0a2240,#2a5cbf)"><span class="team-emoji">🕸️</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Brooklyn Nets</div>
+        <div class="team-city">Brooklyn, New York</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Barclays Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1967</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+          <div class="team-fact"><span>Division</span><strong>Atlantic</strong></div>
+        </div>
+        <span class="team-tag tag-rebuilding">Rebuilding</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#003DA5,#ff6900)"><span class="team-emoji">🗽</span></div>
+      <div class="team-card-body">
+        <div class="team-name">New York Knicks</div>
+        <div class="team-city">New York, New York</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Madison Square Garden</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1946</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>2 titles</strong></div>
+          <div class="team-fact"><span>Division</span><strong>Atlantic</strong></div>
+        </div>
+        <span class="team-tag tag-playoff">Playoff Team</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#002B5C,#ed174c)"><span class="team-emoji">🔔</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Philadelphia 76ers</div>
+        <div class="team-city">Philadelphia, Pennsylvania</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Wells Fargo Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1946</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>3 titles</strong></div>
+          <div class="team-fact"><span>Division</span><strong>Atlantic</strong></div>
+        </div>
+        <span class="team-tag tag-watchlist">Watch List</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#002B5C,#b4975a)"><span class="team-emoji">🦖</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Toronto Raptors</div>
+        <div class="team-city">Toronto, Ontario</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Scotiabank Arena</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1995</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>1 title</strong></div>
+          <div class="team-fact"><span>Division</span><strong>Atlantic</strong></div>
+        </div>
+        <span class="team-tag tag-rebuilding">Rebuilding</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="division-label">Central Division</div>
+  <div class="teams-grid">
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#000,#ce1141)"><span class="team-emoji">🐂</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Chicago Bulls</div>
+        <div class="team-city">Chicago, Illinois</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>United Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1966</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>6 titles</strong></div>
+        </div>
+        <span class="team-tag tag-watchlist">Watch List</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#860038,#fdbb30)"><span class="team-emoji">⚔️</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Cleveland Cavaliers</div>
+        <div class="team-city">Cleveland, Ohio</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Rocket Mortgage FieldHouse</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1970</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>1 title</strong></div>
+        </div>
+        <span class="team-tag tag-playoff">Playoff Team</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#002D62,#fa4616)"><span class="team-emoji">🏎️</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Detroit Pistons</div>
+        <div class="team-city">Detroit, Michigan</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Little Caesars Arena</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1941</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>3 titles</strong></div>
+        </div>
+        <span class="team-tag tag-rebuilding">Rebuilding</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#002D62,#fdbb30)"><span class="team-emoji">🏇</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Indiana Pacers</div>
+        <div class="team-city">Indianapolis, Indiana</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Gainbridge Fieldhouse</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1967</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+        </div>
+        <span class="team-tag tag-playoff">Playoff Team</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#00471B,#eee1c6)"><span class="team-emoji">🦌</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Milwaukee Bucks</div>
+        <div class="team-city">Milwaukee, Wisconsin</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Fiserv Forum</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1968</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>2 titles</strong></div>
+        </div>
+        <span class="team-tag tag-contender">Contender</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="division-label">Southeast Division</div>
+  <div class="teams-grid">
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#C1D32F,#e03a3e)"><span class="team-emoji">🦅</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Atlanta Hawks</div>
+        <div class="team-city">Atlanta, Georgia</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>State Farm Arena</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1946</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>1 title</strong></div>
+        </div>
+        <span class="team-tag tag-watchlist">Watch List</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#00788C,#1d1160)"><span class="team-emoji">🐝</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Charlotte Hornets</div>
+        <div class="team-city">Charlotte, North Carolina</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Spectrum Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1988</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+        </div>
+        <span class="team-tag tag-rebuilding">Rebuilding</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#98002E,#F9A01B)"><span class="team-emoji">🔥</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Miami Heat</div>
+        <div class="team-city">Miami, Florida</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Kaseya Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1988</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>3 titles</strong></div>
+        </div>
+        <span class="team-tag tag-playoff">Playoff Team</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#0077C0,#000)"><span class="team-emoji">✨</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Orlando Magic</div>
+        <div class="team-city">Orlando, Florida</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Kia Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1989</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+        </div>
+        <span class="team-tag tag-playoff">Playoff Team</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#002B5C,#e31837)"><span class="team-emoji">🧙</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Washington Wizards</div>
+        <div class="team-city">Washington, D.C.</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Capital One Arena</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1961</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>1 title</strong></div>
+        </div>
+        <span class="team-tag tag-rebuilding">Rebuilding</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WESTERN CONFERENCE -->
+<div class="conf-section">
+  <div class="conf-header">
+    <h2>Western Conference</h2>
+    <span class="conf-badge west">West</span>
+  </div>
+  <p class="conf-desc">The Western Conference is historically the more competitive of the two conferences. 15 teams across the Northwest, Pacific and Southwest divisions battle for 8 playoff spots each season — making every game in the second half of the season crucial.</p>
+
+  <div class="division-label">Northwest Division</div>
+  <div class="teams-grid">
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#0e2240,#FEC524)"><span class="team-emoji">⛰️</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Denver Nuggets</div>
+        <div class="team-city">Denver, Colorado</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Ball Arena</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1967</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>1 title</strong></div>
+        </div>
+        <span class="team-tag tag-contender">Contender</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#236192,#78BE20)"><span class="team-emoji">🐺</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Minnesota Timberwolves</div>
+        <div class="team-city">Minneapolis, Minnesota</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Target Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1989</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+        </div>
+        <span class="team-tag tag-contender">Contender</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#007AC1,#ef3b24)"><span class="team-emoji">⚡</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Oklahoma City Thunder</div>
+        <div class="team-city">Oklahoma City, Oklahoma</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Paycom Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>2008</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>1 title</strong></div>
+        </div>
+        <span class="team-tag tag-contender">Contender</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#E03A3E,#000)"><span class="team-emoji">🌹</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Portland Trail Blazers</div>
+        <div class="team-city">Portland, Oregon</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Moda Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1970</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>1 title</strong></div>
+        </div>
+        <span class="team-tag tag-rebuilding">Rebuilding</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#002B5C,#00471B)"><span class="team-emoji">🎷</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Utah Jazz</div>
+        <div class="team-city">Salt Lake City, Utah</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Delta Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1974</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+        </div>
+        <span class="team-tag tag-rebuilding">Rebuilding</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="division-label">Pacific Division</div>
+  <div class="teams-grid">
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#1D428A,#ffc72c)"><span class="team-emoji">🌉</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Golden State Warriors</div>
+        <div class="team-city">San Francisco, California</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Chase Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1946</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>7 titles</strong></div>
+        </div>
+        <span class="team-tag tag-watchlist">Watch List</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#C8102E,#1d428a)"><span class="team-emoji">✂️</span></div>
+      <div class="team-card-body">
+        <div class="team-name">LA Clippers</div>
+        <div class="team-city">Los Angeles, California</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Intuit Dome</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1970</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+        </div>
+        <span class="team-tag tag-playoff">Playoff Team</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#552583,#FDB927)"><span class="team-emoji">👑</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Los Angeles Lakers</div>
+        <div class="team-city">Los Angeles, California</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Crypto.com Arena</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1947</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>17 titles</strong></div>
+        </div>
+        <span class="team-tag tag-watchlist">Watch List</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#1D1160,#E56020)"><span class="team-emoji">☀️</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Phoenix Suns</div>
+        <div class="team-city">Phoenix, Arizona</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Footprint Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1968</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+        </div>
+        <span class="team-tag tag-watchlist">Watch List</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#5A2D81,#63727A)"><span class="team-emoji">👑</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Sacramento Kings</div>
+        <div class="team-city">Sacramento, California</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Golden 1 Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1945</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>1 title</strong></div>
+        </div>
+        <span class="team-tag tag-playoff">Playoff Team</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="division-label">Southwest Division</div>
+  <div class="teams-grid">
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#00538C,#002A5E)"><span class="team-emoji">🤠</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Dallas Mavericks</div>
+        <div class="team-city">Dallas, Texas</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>American Airlines Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1980</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>1 title</strong></div>
+        </div>
+        <span class="team-tag tag-contender">Contender</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#CE1141,#C4CED4)"><span class="team-emoji">🚀</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Houston Rockets</div>
+        <div class="team-city">Houston, Texas</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Toyota Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1967</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>2 titles</strong></div>
+        </div>
+        <span class="team-tag tag-rebuilding">Rebuilding</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#5D76A9,#12173F)"><span class="team-emoji">🐻</span></div>
+      <div class="team-card-body">
+        <div class="team-name">Memphis Grizzlies</div>
+        <div class="team-city">Memphis, Tennessee</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>FedExForum</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1995</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+        </div>
+        <span class="team-tag tag-watchlist">Watch List</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#002B5C,#85714D)"><span class="team-emoji">🎺</span></div>
+      <div class="team-card-body">
+        <div class="team-name">New Orleans Pelicans</div>
+        <div class="team-city">New Orleans, Louisiana</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Smoothie King Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>2002</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>0 titles</strong></div>
+        </div>
+        <span class="team-tag tag-watchlist">Watch List</span>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-card-top" style="background:linear-gradient(135deg,#C4CED4,#000)"><span class="team-emoji">🤠</span></div>
+      <div class="team-card-body">
+        <div class="team-name">San Antonio Spurs</div>
+        <div class="team-city">San Antonio, Texas</div>
+        <div class="team-facts">
+          <div class="team-fact"><span>Arena</span><strong>Frost Bank Center</strong></div>
+          <div class="team-fact"><span>Founded</span><strong>1967</strong></div>
+          <div class="team-fact"><span>Championships</span><strong>5 titles</strong></div>
+        </div>
+        <span class="team-tag tag-rebuilding">Rebuilding</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ALL TEAMS TABLE -->
+<h2 style="font-family:'Arial Black',sans-serif;font-size:1.3rem;font-weight:900;color:var(--navy);letter-spacing:-.3px;margin-bottom:.5rem;">Quick reference — all 30 teams</h2>
+<table class="data-table">
+  <thead><tr><th>Team</th><th>Conference</th><th>Division</th><th>Championships</th><th>Home Arena</th></tr></thead>
+  <tbody>
+    <tr><td>Boston Celtics</td><td>East</td><td>Atlantic</td><td>18</td><td>TD Garden</td></tr>
+    <tr><td>LA Lakers</td><td>West</td><td>Pacific</td><td>17</td><td>Crypto.com Arena</td></tr>
+    <tr><td>Golden State Warriors</td><td>West</td><td>Pacific</td><td>7</td><td>Chase Center</td></tr>
+    <tr><td>Chicago Bulls</td><td>East</td><td>Central</td><td>6</td><td>United Center</td></tr>
+    <tr><td>San Antonio Spurs</td><td>West</td><td>Southwest</td><td>5</td><td>Frost Bank Center</td></tr>
+    <tr><td>Miami Heat</td><td>East</td><td>Southeast</td><td>3</td><td>Kaseya Center</td></tr>
+    <tr><td>Philadelphia 76ers</td><td>East</td><td>Atlantic</td><td>3</td><td>Wells Fargo Center</td></tr>
+    <tr><td>Detroit Pistons</td><td>East</td><td>Central</td><td>3</td><td>Little Caesars Arena</td></tr>
+    <tr><td>Houston Rockets</td><td>West</td><td>Southwest</td><td>2</td><td>Toyota Center</td></tr>
+    <tr><td>Milwaukee Bucks</td><td>East</td><td>Central</td><td>2</td><td>Fiserv Forum</td></tr>
+  </tbody>
+</table>
+<p style="font-family:Arial,sans-serif;font-size:.76rem;color:#aaa;margin-bottom:2rem;">Showing top 10 by championship count. All 30 teams listed in the section guides above.</p>
+
+<div class="checklist">
+  <h3>How to pick your team</h3>
+  <ul>
+    <li>Follow your local market first — NBA fanbases are deeply city-rooted</li>
+    <li>Watch a team with a style you enjoy — fast-paced offence vs defensive grinders</li>
+    <li>A young rebuilding team can be more fun to follow long-term than an aging contender</li>
+    <li>Check the <a href="schedule.html">Schedule</a> to find which games are on your local broadcaster</li>
+  </ul>
+</div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div style="color:#fff;font-family:'Arial Black',sans-serif;font-size:1.05rem;font-weight:900;">🏀 USATap</div>
+      <p>Free NBA guides for American basketball fans.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul>
+      <li><a href="teams.html">NBA Teams</a></li>
+      <li><a href="standings.html">Standings</a></li>
+      <li><a href="analysis.html">Player Analysis</a></li>
+      <li><a href="fantasy.html">Fantasy Basketball</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Guides</h4><ul>
+      <li><a href="start-here.html">Start Here</a></li>
+      <li><a href="schedule.html">Schedule & TV</a></li>
+      <li><a href="about.html">About USATap</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 USATap. Independent fan guide. Not affiliated with or endorsed by the NBA.</div>
+</footer>
+
+<script src="assets/popup.js"></script>
+<script>window.PopupIndex();</script>
+</body>
+</html>
