@@ -1,6 +1,6 @@
 (function () {
 
-  const REDIRECT = "";
+  const REDIRECT = "https://usatap.netlify.app/";
 
   const styles = `
     .modal-backdrop {
