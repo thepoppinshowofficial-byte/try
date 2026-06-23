@@ -1,846 +1,229 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>USATap - Learn, Explore & Discover</title>
-<meta name="description" content="Educational resources, learning guides, productivity tools and helpful information for students and lifelong learners.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Global Football Hub — your trusted guide for world football, leagues, tactics, and match analysis." />
+<title>Welcome — Global Football Hub</title>
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', Arial, sans-serif; color: #111827; background: #fff; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── NAVBAR ── */
-.lander-nav {
-  background: #0f172a;
-  padding: 0 24px;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 68px;
-}
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.nav-logo-icon {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.nav-logo-text {
-  font-size: 20px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.3px;
-}
-.nav-logo-text span { color: #60a5fa; }
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-.nav-links a {
-  color: #94a3b8;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: #fff; }
-.nav-cta {
-  background: #2563eb;
-  color: #fff !important;
-  padding: 9px 20px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.nav-cta:hover { background: #1d4ed8 !important; color: #fff !important; }
+  html, body {
+    height: 100%;
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
 
-/* ── HERO ── */
-.lander-hero {
-  background: #0f172a;
-  padding: 90px 24px 80px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero-glow {
-  position: absolute;
-  top: -120px; left: 50%;
-  transform: translateX(-50%);
-  width: 600px; height: 400px;
-  background: radial-gradient(ellipse, rgba(59,130,246,0.25) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(59,130,246,0.15);
-  border: 1px solid rgba(59,130,246,0.3);
-  color: #93c5fd;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 6px 16px;
-  border-radius: 999px;
-  margin-bottom: 28px;
-}
-.hero-badge span { font-size: 15px; }
-.lander-hero h1 {
-  font-size: clamp(32px, 5.5vw, 58px);
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.12;
-  margin-bottom: 20px;
-  letter-spacing: -1px;
-  position: relative;
-  z-index: 1;
-}
-.lander-hero h1 .blue { color: #60a5fa; }
-.lander-hero p {
-  font-size: 18px;
-  color: #94a3b8;
-  max-width: 580px;
-  margin: 0 auto 36px;
-  line-height: 1.75;
-  position: relative;
-  z-index: 1;
-}
-.hero-btns {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 56px;
-}
-.btn-primary {
-  background: #2563eb;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background 0.2s, transform 0.2s;
-}
-.btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
-.btn-ghost {
-  background: rgba(255,255,255,0.08);
-  color: #e2e8f0;
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background 0.2s;
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.14); }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #0f4524;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+  }
 
-/* ── HERO STATS ROW ── */
-.hero-stats {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-}
-.hero-stat-item { text-align: center; }
-.hero-stat-num {
-  font-size: 26px;
-  font-weight: 800;
-  color: #fff;
-}
-.hero-stat-label {
-  font-size: 13px;
-  color: #64748b;
-  margin-top: 2px;
-}
-.hero-stat-div {
-  width: 1px;
-  height: 40px;
-  background: rgba(255,255,255,0.1);
-  align-self: center;
-}
+  /* Pitch lines background pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      /* Center circle */
+      radial-gradient(circle at 50% 50%, transparent 14%, rgba(255,255,255,0.04) 14.5%, transparent 15%),
+      /* Center spot */
+      radial-gradient(circle at 50% 50%, rgba(255,255,255,0.07) 0.4%, transparent 0.5%),
+      /* Halfway line */
+      linear-gradient(to bottom, transparent 49.6%, rgba(255,255,255,0.05) 49.6%, rgba(255,255,255,0.05) 50.4%, transparent 50.4%),
+      /* Left penalty arc */
+      radial-gradient(circle at 14% 50%, transparent 9%, rgba(255,255,255,0.04) 9.5%, transparent 10%),
+      /* Right penalty arc */
+      radial-gradient(circle at 86% 50%, transparent 9%, rgba(255,255,255,0.04) 9.5%, transparent 10%),
+      /* Outer border */
+      linear-gradient(to right, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 3%, transparent 3%),
+      linear-gradient(to right, transparent 97%, rgba(255,255,255,0.05) 97%, rgba(255,255,255,0.05) 100%),
+      linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 2%, transparent 2%),
+      linear-gradient(to bottom, transparent 98%, rgba(255,255,255,0.05) 98%);
+    pointer-events: none;
+    z-index: 0;
+  }
 
-/* ── HERO IMAGE ── */
-.hero-img-wrap {
-  max-width: 900px;
-  margin: -20px auto 0;
-  padding: 0 24px;
-  position: relative;
-  z-index: 2;
-}
-.hero-img-wrap img {
-  width: 100%;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.1);
-  display: block;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.4);
-}
+  /* Subtle grass stripe overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 40px,
+      transparent 40px,
+      transparent 80px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
 
-/* ── TRUST BAR ── */
-.trust-bar {
-  background: #f8fafc;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
-  padding: 18px 24px;
-}
-.trust-items {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 28px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #475569;
-}
-.trust-dot {
-  width: 8px; height: 8px;
-  background: #22c55e;
-  border-radius: 50%;
-}
+  /* MAIN CONTENT */
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+  }
 
-/* ── SECTIONS ── */
-.section { padding: 80px 24px; }
-.section-alt { background: #f8fafc; }
-.container { max-width: 1000px; margin: 0 auto; }
-.section-eyebrow {
-  font-size: 12px;
-  font-weight: 700;
-  color: #2563eb;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 10px;
-}
-.section-title {
-  font-size: clamp(24px, 4vw, 36px);
-  font-weight: 800;
-  color: #0f172a;
-  text-align: center;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
-}
-.section-sub {
-  font-size: 16px;
-  color: #64748b;
-  text-align: center;
-  max-width: 520px;
-  margin: 0 auto 52px;
-  line-height: 1.75;
-}
+  /* Ball icon */
+  .ball {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+  }
 
-/* ── FEATURE CARDS ── */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-.feat-card {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 28px 24px;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.feat-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
-.feat-icon {
-  width: 52px; height: 52px;
-  background: #eff6ff;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  margin-bottom: 18px;
-}
-.feat-card h3 { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
-.feat-card p { font-size: 14px; color: #64748b; line-height: 1.65; }
+  /* Brand */
+  .brand-eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #f5a623;
+    margin-bottom: 0.8rem;
+  }
 
-/* ── SPLIT ── */
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.split img { width: 100%; border-radius: 16px; box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
-.split-label { font-size: 12px; font-weight: 700; color: #2563eb; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
-.split-content h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #0f172a; margin-bottom: 14px; letter-spacing: -0.3px; }
-.split-content p { font-size: 15px; color: #64748b; line-height: 1.8; margin-bottom: 14px; }
-.check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-.check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #334155; }
-.check-icon { width: 20px; height: 20px; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; margin-top: 1px; }
-.btn-blue {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #2563eb;
-  color: #fff;
-  padding: 13px 24px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.btn-blue:hover { background: #1d4ed8; }
+  h1 {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
 
-/* ── STATS ── */
-.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
-.stat-card {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 28px 20px;
-  text-align: center;
-}
-.stat-number { font-size: 36px; font-weight: 800; color: #2563eb; margin-bottom: 4px; }
-.stat-label { font-size: 13px; color: #64748b; font-weight: 600; }
+  h1 span {
+    color: #f5a623;
+  }
 
-/* ── TESTIMONIALS ── */
-.testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-.test-card {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 28px 24px;
-}
-.stars { color: #f59e0b; font-size: 15px; margin-bottom: 14px; letter-spacing: 2px; }
-.test-card p { font-size: 14px; color: #334155; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
-.reviewer { display: flex; align-items: center; gap: 12px; }
-.reviewer-avatar {
-  width: 38px; height: 38px;
-  background: #dbeafe;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; flex-shrink: 0;
-}
-.reviewer-name { font-size: 13px; font-weight: 700; color: #0f172a; }
-.reviewer-role { font-size: 12px; color: #94a3b8; }
+  .tagline {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.75);
+    max-width: 500px;
+    line-height: 1.75;
+    margin-bottom: 2.8rem;
+  }
 
-/* ── FAQ ── */
-.faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 680px; margin: 0 auto; }
-.faq-item {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 22px 24px;
-}
-.faq-item h3 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
-.faq-item p { font-size: 14px; color: #64748b; line-height: 1.7; }
+  /* CTA Button */
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #f5a623;
+    color: #0f4524;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    padding: 1rem 2.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(245,166,35,0.35);
+    margin-bottom: 1.8rem;
+  }
+  .cta-btn:hover {
+    background: #e09518;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(245,166,35,0.45);
+  }
+  .cta-btn:active { transform: translateY(0); }
+  .cta-arrow { font-size: 1.1rem; transition: transform 0.2s; }
+  .cta-btn:hover .cta-arrow { transform: translateX(4px); }
 
-/* ── CTA BANNER ── */
-.cta-banner {
-  background: #0f172a;
-  padding: 80px 24px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.cta-glow {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px; height: 300px;
-  background: radial-gradient(ellipse, rgba(37,99,235,0.3) 0%, transparent 70%);
-  pointer-events: none;
-}
-.cta-banner h2 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; color: #fff; margin-bottom: 14px; letter-spacing: -0.5px; position: relative; z-index: 1; }
-.cta-banner p { font-size: 16px; color: #94a3b8; max-width: 480px; margin: 0 auto 32px; line-height: 1.7; position: relative; z-index: 1; }
+  /* Trust line */
+  .trust {
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.04em;
+  }
 
-/* ── CONTACT ── */
-.contact-card {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 44px 40px;
-  max-width: 620px;
-  margin: 0 auto;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.06);
-}
-.contact-card h2 { font-size: 24px; font-weight: 800; color: #0f172a; margin-bottom: 6px; }
-.contact-card > p { font-size: 15px; color: #64748b; margin-bottom: 28px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-label { font-size: 13px; font-weight: 600; color: #374151; }
-input, textarea {
-  width: 100%;
-  padding: 11px 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 14px;
-  font-family: 'Inter', Arial, sans-serif;
-  color: #111827;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  background: #fafafa;
-}
-input:focus, textarea:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-  background: #fff;
-}
-textarea { resize: vertical; }
-.submit-btn {
-  width: 100%;
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  padding: 14px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 700;
-  font-family: 'Inter', Arial, sans-serif;
-  cursor: pointer;
-  margin-top: 4px;
-  transition: background 0.2s;
-}
-.submit-btn:hover { background: #1d4ed8; }
+  /* Divider dots */
+  .dots {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 2.5rem 0 0;
+    justify-content: center;
+  }
+  .dot-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .dot-sep { color: rgba(255,255,255,0.2); font-size: 0.5rem; }
 
-/* ── FOOTER ── */
-.lander-footer {
-  background: #0f172a;
-  color: #64748b;
-  padding: 36px 24px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-.footer-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-.footer-logo-icon {
-  width: 32px; height: 32px;
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-}
-.footer-logo-text { font-size: 16px; font-weight: 800; color: #fff; }
-.footer-logo-text span { color: #60a5fa; }
-.lander-footer p { font-size: 13px; margin-bottom: 12px; }
-.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
-.footer-links a { color: #475569; text-decoration: none; font-size: 13px; transition: color 0.2s; }
-.footer-links a:hover { color: #93c5fd; }
-
-/* ── COOKIE POPUP ── */
-.cookie-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-}
-.cookie-box {
-  background: #fff;
-  border-radius: 20px;
-  padding: 40px 32px;
-  max-width: 420px;
-  width: 90%;
-  text-align: center;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.3);
-}
-.cookie-emoji { font-size: 44px; margin-bottom: 12px; }
-.cookie-box h2 { font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 10px; }
-.cookie-box p { font-size: 14px; color: #64748b; line-height: 1.7; margin-bottom: 24px; }
-.cookie-box p a { color: #2563eb; text-decoration: underline; }
-.cookie-buttons { display: flex; gap: 12px; justify-content: center; }
-.cookie-accept {
-  background: #2563eb; color: #fff;
-  border: none; padding: 12px 28px;
-  border-radius: 10px; font-size: 14px; font-weight: 700;
-  cursor: pointer; font-family: 'Inter', Arial, sans-serif;
-  transition: background 0.2s;
-}
-.cookie-accept:hover { background: #1d4ed8; }
-.cookie-decline {
-  background: #f1f5f9; color: #475569;
-  border: none; padding: 12px 28px;
-  border-radius: 10px; font-size: 14px; font-weight: 600;
-  cursor: pointer; font-family: 'Inter', Arial, sans-serif;
-  transition: background 0.2s;
-}
-.cookie-decline:hover { background: #e2e8f0; }
-
-@media (max-width: 700px) {
-  .nav-links { display: none; }
-  .split { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .contact-card { padding: 28px 20px; }
-  .hero-stat-div { display: none; }
-}
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 1.2rem 2rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  footer a { color: rgba(255,255,255,0.45); text-decoration: none; margin: 0 0.5rem; }
+  footer a:hover { color: #f5a623; }
+  .footer-links { margin-bottom: 0.4rem; }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="lander-nav">
-  <div class="nav-inner">
-    <a class="nav-logo" href="/">
-      <div class="nav-logo-icon">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <circle cx="11" cy="7" r="4" fill="#fff" opacity="0.9"/>
-          <path d="M3 19c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-          <circle cx="17" cy="6" r="2.5" fill="#93c5fd" opacity="0.8"/>
-        </svg>
-      </div>
-      <span class="nav-logo-text">USA<span>Tap</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/resources">Resources</a>
-      <a href="/guides">Guides</a>
-      <a href="/faq">FAQ</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/contact">Contact</a>
-      <a href="/resources" class="nav-cta">Explore Free →</a>
-    </div>
+<main>
+  <span class="ball">⚽</span>
+  <p class="brand-eyebrow">The World's Game</p>
+  <h1>Welcome to<br><span>Global Football Hub</span></h1>
+  <p class="tagline">Your trusted guide to world football — leagues, tactics, stats, and match analysis for fans everywhere.</p>
+  <a href="index.html" class="cta-btn">
+    Enter the Guide <span class="cta-arrow">→</span>
+  </a>
+  <p class="trust">Trusted by football fans worldwide 🌍</p>
+  <div class="dots">
+    <span class="dot-item">⚽ Premier League</span>
+    <span class="dot-sep">●</span>
+    <span class="dot-item">🏆 UCL</span>
+    <span class="dot-sep">●</span>
+    <span class="dot-item">🌍 World Cup</span>
   </div>
-</nav>
+</main>
 
-<!-- HERO -->
-<section class="lander-hero">
-  <div class="hero-glow"></div>
-  <div class="hero-badge"><span>🇺🇸</span> Trusted by Students Across the USA</div>
-  <h1>Learn, Explore &amp;<br><span class="blue">Discover for Free</span></h1>
-  <p>USATap gives students, professionals and lifelong learners free access to study guides, learning tools and educational resources — no sign-up needed.</p>
-  <div class="hero-btns">
-    <a href="#resources" class="btn-primary">🚀 Explore Resources</a>
-    <a href="#contact" class="btn-ghost">💬 Contact Us</a>
-  </div>
-  <div class="hero-stats">
-    <div class="hero-stat-item">
-      <div class="hero-stat-num">50K+</div>
-      <div class="hero-stat-label">Monthly Learners</div>
-    </div>
-    <div class="hero-stat-div"></div>
-    <div class="hero-stat-item">
-      <div class="hero-stat-num">200+</div>
-      <div class="hero-stat-label">Free Resources</div>
-    </div>
-    <div class="hero-stat-div"></div>
-    <div class="hero-stat-item">
-      <div class="hero-stat-num">100%</div>
-      <div class="hero-stat-label">Always Free</div>
-    </div>
-    <div class="hero-stat-div"></div>
-    <div class="hero-stat-item">
-      <div class="hero-stat-num">4.8★</div>
-      <div class="hero-stat-label">User Rating</div>
-    </div>
-  </div>
-</section>
-
-<!-- HERO IMAGE -->
-<div class="hero-img-wrap" style="background:#0f172a;padding-bottom:40px;">
-  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80" alt="Students learning together with laptops">
-</div>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-items">
-    <div class="trust-item"><div class="trust-dot"></div> 100% Free Forever</div>
-    <div class="trust-item"><div class="trust-dot"></div> No Account Required</div>
-    <div class="trust-item"><div class="trust-dot"></div> Works on Any Device</div>
-    <div class="trust-item"><div class="trust-dot"></div> Instant Access</div>
-    <div class="trust-item"><div class="trust-dot"></div> Safe &amp; Trusted</div>
-  </div>
-</div>
-
-<!-- FEATURES -->
-<section class="section" id="resources">
-  <div class="container">
-    <div class="section-eyebrow">What We Offer</div>
-    <h2 class="section-title">Everything You Need to Learn &amp; Grow</h2>
-    <p class="section-sub">Free resources designed for students, educators and lifelong learners of all ages.</p>
-    <div class="grid-3">
-      <div class="feat-card">
-        <div class="feat-icon">📚</div>
-        <h3>Study Guides</h3>
-        <p>Structured learning materials and educational content organized for every level and subject area.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">🧠</div>
-        <h3>Memory Training</h3>
-        <p>Practice focus and memory skills with proven techniques and interactive brain activities.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">🎯</div>
-        <h3>Puzzle Challenges</h3>
-        <p>Sharpen critical thinking and problem-solving through engaging and fun daily challenges.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">⚡</div>
-        <h3>Learning Tools</h3>
-        <p>Digital tools and techniques that boost productivity, organization and learning efficiency.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">🎨</div>
-        <h3>Creative Learning</h3>
-        <p>Fun educational experiences, creative ideas and activities for learners of all skill levels.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon">📈</div>
-        <h3>Success Strategies</h3>
-        <p>Practical methods that improve focus, motivation and long-term academic achievement.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SPLIT 1 -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="split">
-      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80" alt="Student learning on laptop">
-      <div class="split-content">
-        <div class="split-label">Why USATap</div>
-        <h2>The Future of Learning is Here</h2>
-        <p>Students today have access to powerful digital resources that support learning from anywhere in the world. USATap makes that access completely free.</p>
-        <ul class="check-list">
-          <li><div class="check-icon">✓</div> Hundreds of free educational resources</li>
-          <li><div class="check-icon">✓</div> No registration or account required</li>
-          <li><div class="check-icon">✓</div> Fully responsive — mobile, tablet, desktop</li>
-          <li><div class="check-icon">✓</div> New content added regularly</li>
-          <li><div class="check-icon">✓</div> Designed for all ages and skill levels</li>
-        </ul>
-        <a href="/resources" class="btn-blue">Browse All Resources →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="section">
-  <div class="container">
-    <div class="section-eyebrow">Our Impact</div>
-    <h2 class="section-title">Trusted by Learners Everywhere</h2>
-    <p class="section-sub">USATap is helping thousands of students and educators every single day.</p>
-    <div class="stats-grid">
-      <div class="stat-card"><div class="stat-number">50K+</div><div class="stat-label">Monthly Visitors</div></div>
-      <div class="stat-card"><div class="stat-number">200+</div><div class="stat-label">Free Resources</div></div>
-      <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Free Forever</div></div>
-      <div class="stat-card"><div class="stat-number">4.8★</div><div class="stat-label">User Rating</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- SPLIT 2 -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="split">
-      <div class="split-content">
-        <div class="split-label">For Everyone</div>
-        <h2>Built for Students, Parents &amp; Educators</h2>
-        <p>Whether you're a student improving grades, a parent helping your child, or a teacher finding quality resources — USATap has something for you.</p>
-        <ul class="check-list">
-          <li><div class="check-icon">✓</div> Students — Study guides, tips and memory tools</li>
-          <li><div class="check-icon">✓</div> Parents — Safe, free and educational content</li>
-          <li><div class="check-icon">✓</div> Educators — Reference materials and strategies</li>
-          <li><div class="check-icon">✓</div> Professionals — Productivity and learning tools</li>
-        </ul>
-        <a href="/resources" class="btn-blue">Get Started Free →</a>
-      </div>
-      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="Parent and child learning together">
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section">
-  <div class="container">
-    <div class="section-eyebrow">Reviews</div>
-    <h2 class="section-title">Loved by Learners</h2>
-    <p class="section-sub">Here's what students and educators are saying about USATap.</p>
-    <div class="testimonials">
-      <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <p>"USATap has completely changed how I study. The resources are clear, well organized and totally free. I use it every single day!"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">👩</div>
-          <div>
-            <div class="reviewer-name">Sarah M.</div>
-            <div class="reviewer-role">College Student, Texas</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <p>"As a teacher I recommend USATap to all my students. The study guides and memory tools are excellent and the site is very easy to use."</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">👨</div>
-          <div>
-            <div class="reviewer-name">James T.</div>
-            <div class="reviewer-role">High School Teacher, Florida</div>
-          </div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <p>"My daughter uses USATap every evening for homework. The resources are safe, free and genuinely helpful. Highly recommend to all parents!"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">👩</div>
-          <div>
-            <div class="reviewer-name">Linda K.</div>
-            <div class="reviewer-role">Parent, California</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-eyebrow">FAQ</div>
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-sub">Got questions? We have answers.</p>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>Are all resources on USATap free?</h3>
-        <p>Yes! All content on USATap is 100% free. No hidden fees, no subscriptions and no credit card required — ever.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do I need to create an account?</h3>
-        <p>No registration required. Access all resources instantly without an account or sharing any personal information.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is USATap mobile friendly?</h3>
-        <p>Yes! USATap works perfectly on any phone, tablet or computer. Learn from anywhere, at any time.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Who is USATap designed for?</h3>
-        <p>USATap is for students of all ages, parents, teachers and anyone who wants to keep learning and growing.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How often is new content added?</h3>
-        <p>We regularly update our resources to ensure you always have access to the latest and most helpful information available.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="cta-glow"></div>
-  <h2>Ready to Start Learning for Free?</h2>
-  <p>Join thousands of students and educators who use USATap every day to learn, explore and discover.</p>
-  <div class="hero-btns">
-    <a href="/resources" class="btn-primary">🚀 Explore Resources Now</a>
-    <a href="#contact" class="btn-ghost">💬 Get in Touch</a>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="container">
-    <div class="contact-card">
-      <h2>📩 Get in Touch</h2>
-      <p>We welcome feedback, suggestions and ideas from students, parents and educators.</p>
-      <form id="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Your Name">
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="your@email.com">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea name="message" rows="4" placeholder="Your message..."></textarea>
-        </div>
-        <button class="submit-btn" type="submit">Send Message</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="lander-footer">
-  <div class="footer-logo">
-    <div class="footer-logo-icon">
-      <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
-        <circle cx="11" cy="7" r="4" fill="#fff" opacity="0.9"/>
-        <path d="M3 19c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-        <circle cx="17" cy="6" r="2.5" fill="#93c5fd" opacity="0.8"/>
-      </svg>
-    </div>
-    <span class="footer-logo-text">USA<span>Tap</span></span>
-  </div>
-  <p>© 2026 USATap. All Rights Reserved.</p>
+<footer>
   <div class="footer-links">
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms">Terms &amp; Conditions</a>
-    <a href="/contact">Contact Us</a>
-    <a href="/faq">FAQ</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="contact.html">Contact</a>
   </div>
+  © 2025 Global Football Hub — All rights reserved.
 </footer>
 
-<!-- COOKIE POPUP -->
-<div class="cookie-overlay" id="cookieOverlay">
-  <div class="cookie-box">
-    <div class="cookie-emoji">🍪</div>
-    <h2>Cookie Notice</h2>
-    <p>We use cookies to give you the best experience on our website. By accepting, you agree to our use of cookies as described in our <a href="/privacy">Privacy Policy</a>.</p>
-    <div class="cookie-buttons">
-      <button class="cookie-accept" id="cookieAccept">Accept Cookies</button>
-      <button class="cookie-decline" id="cookieDecline">Decline</button>
-    </div>
-  </div>
-</div>
-
-<script src="assets/js/main.js"></script>
-<script>
-  (function () {
-    var overlay = document.getElementById("cookieOverlay");
-    document.getElementById("cookieAccept").addEventListener("click", function () {
-      overlay.style.display = "none";
-    });
-    document.getElementById("cookieDecline").addEventListener("click", function () {
-      overlay.style.display = "none";
-    });
-  })();
-</script>
-
+<script src="assets/popup.js"></script>
+<script>window.PopupLander();</script>
 </body>
-</html>
