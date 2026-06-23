@@ -1,101 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="Global Football Hub: free guides for football fans worldwide. Leagues, tactics, fantasy tips, fixtures and more."/>
-<meta name="theme-color" content="#0f4524"/>
-<title>Global Football Hub — Free Football Guides for Fans Worldwide</title>
-<link rel="stylesheet" href="assets/style.css"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="USATap — free NBA guide for American basketball fans. Teams, standings, player analysis, fantasy tips and the 2025 season schedule all in one place."/>
+<meta name="keywords" content="NBA guide, NBA teams 2025, NBA standings, NBA fantasy basketball, basketball analysis USA, NBA schedule"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="USATap"/>
+<meta property="og:title" content="USATap — Free NBA Guide for American Basketball Fans"/>
+<meta property="og:description" content="All 30 NBA teams, standings, player analysis, fantasy tips and the 2025 season guide — free for US fans."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#0a1628"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"USATap","url":"https://usatap.netlify.app/","description":"Free NBA fan guide covering teams, standings, player analysis and fantasy basketball for American fans."}
+</script>
+<title>USATap — Free NBA Guide for American Basketball Fans | Teams, Standings & Analysis 2025</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0a1628;--blue:#1d428a;--blue-light:#e8eef8;
+  --red:#c8102e;--red-light:#fce8eb;
+  --gold:#f5a623;--gold-dark:#d4891a;
+  --bg:#f7f8fc;--white:#fff;
+  --text:#141414;--muted:#5c5c6e;--border:#dde2ee;
+  --nav-h:64px;--max:1100px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Georgia','Times New Roman',serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px;}
+a{color:var(--blue);text-decoration:none;}
+a:hover{color:var(--navy);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--navy);height:var(--nav-h);display:flex;align-items:center;padding:0 2rem;box-shadow:0 2px 10px rgba(0,0,0,.35);}
+.nav-inner{max-width:var(--max);width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Arial Black',Impact,sans-serif;font-size:1.3rem;font-weight:900;letter-spacing:-.5px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px;}
+.logo-badge{background:var(--red);color:#fff;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.nav-links{display:flex;list-style:none;}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-family:Arial,sans-serif;font-size:.82rem;letter-spacing:.04em;padding:.5rem .9rem;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--red);color:#fff!important;font-weight:700!important;border-radius:4px;padding:.45rem 1rem!important;}
+.nav-cta:hover{background:#a50d26!important;}
+
+/* TICKER */
+.ticker{background:var(--blue);padding:.65rem 0;overflow:hidden;}
+.ticker-inner{display:flex;gap:3rem;animation:tick 25s linear infinite;white-space:nowrap;}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.t-item{font-family:Arial,sans-serif;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.06em;text-transform:uppercase;flex-shrink:0;}
+.t-dot{color:var(--gold);margin-right:.5rem;}
+
+/* HERO */
+.hero{background:linear-gradient(155deg,var(--navy) 0%,var(--blue) 55%,#2a5abf 100%);color:#fff;padding:5rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 80px),repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 80px);pointer-events:none;}
+.hero::after{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:rgba(200,16,46,.1);pointer-events:none;}
+.hero-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;}
+.hero-eye{font-family:Arial,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.hero-eye::before{content:'';display:block;width:24px;height:2px;background:var(--gold);}
+h1{font-family:'Arial Black',Impact,sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.08;letter-spacing:-1px;margin-bottom:1.2rem;}
+.hero-p{font-size:1.05rem;color:rgba(255,255,255,.8);max-width:480px;margin-bottom:2rem;line-height:1.75;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{background:var(--red);color:#fff;font-family:Arial,sans-serif;font-weight:700;font-size:.9rem;padding:.78rem 1.6rem;border-radius:4px;text-decoration:none;transition:background .2s,transform .1s;display:inline-block;}
+.btn-primary:hover{background:#a50d26;transform:translateY(-1px);}
+.btn-secondary{border:1.5px solid rgba(255,255,255,.5);color:#fff;font-family:Arial,sans-serif;font-weight:600;font-size:.9rem;padding:.78rem 1.6rem;border-radius:4px;text-decoration:none;transition:all .2s;display:inline-block;}
+.btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,.1);}
+.hero-badges{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem;}
+.badge{background:rgba(255,255,255,.1);color:rgba(255,255,255,.88);font-family:Arial,sans-serif;font-size:.76rem;letter-spacing:.04em;padding:.3rem .9rem;border-radius:20px;border:1px solid rgba(255,255,255,.18);}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.stat-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:1.4rem 1.2rem;text-align:center;}
+.stat-num{font-family:'Arial Black',sans-serif;font-size:2.5rem;font-weight:900;line-height:1;color:var(--gold);}
+.stat-label{font-family:Arial,sans-serif;font-size:.78rem;color:rgba(255,255,255,.65);margin-top:.3rem;text-transform:uppercase;letter-spacing:.06em;}
+
+/* SECTIONS */
+section{padding:4.5rem 2rem;}
+.section-inner{max-width:var(--max);margin:0 auto;}
+.section-label{font-family:Arial,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem;}
+h2{font-family:'Arial Black',Impact,sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;line-height:1.12;letter-spacing:-.5px;color:var(--text);margin-bottom:1rem;}
+.section-intro{font-size:1.02rem;color:var(--muted);max-width:620px;margin-bottom:3rem;line-height:1.75;}
+
+/* CATEGORY CARDS */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.cat-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.09);}
+.cat-img{width:100%;height:170px;display:flex;align-items:center;justify-content:center;font-size:3.8rem;}
+.cat-img.navy{background:linear-gradient(135deg,var(--navy),var(--blue));}
+.cat-img.red{background:linear-gradient(135deg,var(--red),#e84070);}
+.cat-img.gold{background:linear-gradient(135deg,#7a4f00,var(--gold));}
+.cat-img.blue{background:linear-gradient(135deg,var(--blue),#4a7ad4);}
+.cat-img.dark{background:linear-gradient(135deg,#111,#2a2a2a);}
+.cat-img.mix{background:linear-gradient(135deg,var(--navy),var(--red));}
+.cat-body{padding:1.2rem 1.4rem 1.5rem;}
+.cat-tag{font-family:Arial,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:var(--red-light);display:inline-block;padding:.2rem .6rem;border-radius:3px;margin-bottom:.6rem;}
+.cat-card h3{font-family:'Arial Black',sans-serif;font-size:1.05rem;font-weight:900;color:var(--text);margin-bottom:.45rem;letter-spacing:-.2px;}
+.cat-card p{font-size:.87rem;color:var(--muted);line-height:1.6;}
+
+/* ABOUT DARK SECTION */
+.dark-section{background:var(--navy);color:#fff;}
+.dark-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.dark-section h2{color:#fff;}
+.dark-section .section-label{color:var(--gold);}
+.dark-section p{color:rgba(255,255,255,.78);margin-bottom:1.1rem;font-size:1.02rem;}
+.pillars{margin-top:2rem;display:flex;flex-direction:column;gap:1.4rem;}
+.pillar{display:flex;gap:1.2rem;align-items:flex-start;}
+.pillar-num{font-family:'Arial Black',sans-serif;font-size:2rem;font-weight:900;color:var(--gold);line-height:1;flex-shrink:0;width:36px;}
+.pillar h4{font-family:Arial,sans-serif;font-weight:700;font-size:.95rem;color:#fff;margin-bottom:.25rem;}
+.pillar p{color:rgba(255,255,255,.65);font-size:.87rem;margin:0;line-height:1.6;}
+
+/* CONFERENCE BLOCKS */
+.conf-section{background:var(--white);}
+.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.conf-block{border-left:3px solid var(--red);padding-left:1.5rem;}
+.conf-block.west{border-color:var(--blue);}
+.conf-block h3{font-family:'Arial Black',sans-serif;font-size:1.05rem;font-weight:900;color:var(--text);margin-bottom:.9rem;letter-spacing:-.2px;}
+.conf-block ul{list-style:none;padding:0;}
+.conf-block li{font-size:.88rem;color:var(--muted);padding:.3rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;}
+.conf-block li:last-child{border-bottom:none;}
+.conf-block li strong{color:var(--text);}
+
+/* METRICS */
+.metrics-section{background:var(--blue-light);}
+.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.metric-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.8rem 1.4rem;text-align:center;}
+.metric-icon{font-size:2rem;margin-bottom:.8rem;}
+.metric-card h3{font-family:'Arial Black',sans-serif;font-size:1rem;font-weight:900;color:var(--navy);margin-bottom:.5rem;letter-spacing:-.2px;}
+.metric-card p{font-size:.85rem;color:var(--muted);line-height:1.65;}
+
+/* BLOG CARDS */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform .2s;}
+.blog-card:hover{transform:translateY(-2px);}
+.blog-img{width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;}
+.blog-body{padding:1.1rem 1.3rem 1.3rem;}
+.blog-meta{font-family:Arial,sans-serif;font-size:.72rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;}
+.blog-card h3{font-family:'Arial Black',sans-serif;font-size:.96rem;font-weight:900;color:var(--text);margin-bottom:.4rem;line-height:1.3;letter-spacing:-.2px;}
+.blog-card p{font-size:.83rem;color:var(--muted);line-height:1.55;}
+.read-more{display:inline-block;margin-top:.7rem;font-family:Arial,sans-serif;font-size:.8rem;font-weight:700;color:var(--red);text-decoration:none;}
+.read-more:hover{color:var(--navy);}
+
+/* FAQ */
+.faq-section{background:var(--white);}
+.faq-list{max-width:760px;}
+.faq-item{border-bottom:1px solid var(--border);padding:1.3rem 0;}
+.faq-item:first-child{border-top:1px solid var(--border);}
+.faq-q{font-family:Arial,sans-serif;font-weight:700;font-size:.97rem;color:var(--text);margin-bottom:.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
+.faq-q span{font-size:1.3rem;color:var(--red);flex-shrink:0;margin-left:1rem;}
+.faq-a{font-size:.9rem;color:var(--muted);line-height:1.7;}
+
+/* CTA BANNER */
+.cta-banner{background:var(--gold);padding:3.5rem 2rem;text-align:center;}
+.cta-banner h2{color:var(--navy);margin-bottom:.8rem;}
+.cta-banner p{color:rgba(10,22,40,.75);margin-bottom:1.8rem;font-size:1.05rem;max-width:520px;margin-left:auto;margin-right:auto;}
+.btn-dark{background:var(--navy);color:#fff;font-family:Arial,sans-serif;font-weight:700;font-size:.9rem;padding:.85rem 2rem;border-radius:4px;text-decoration:none;display:inline-block;transition:background .2s;margin:.3rem;}
+.btn-dark:hover{background:#050e1a;}
+
+/* CONTACT */
+.contact-section{background:var(--bg);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-form{display:flex;flex-direction:column;gap:1rem;}
+.contact-form input,.contact-form textarea{font-family:Georgia,serif;font-size:.9rem;border:1px solid var(--border);border-radius:6px;padding:.75rem 1rem;background:var(--white);color:var(--text);transition:border-color .2s;resize:vertical;}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--blue);}
+.contact-form textarea{min-height:120px;}
+.form-submit{background:var(--navy);color:#fff;font-family:Arial,sans-serif;font-weight:700;font-size:.9rem;padding:.75rem 1.5rem;border:none;border-radius:4px;cursor:pointer;transition:background .2s;align-self:flex-start;}
+.form-submit:hover{background:#050e1a;}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2rem;font-family:Arial,sans-serif;font-size:.82rem;}
+.footer-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;}
+.footer-brand p{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.5rem;line-height:1.65;}
+.footer-col h4{font-size:.76rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:.9rem;font-weight:700;}
+.footer-col ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.4rem;}
+.footer-col a{color:rgba(255,255,255,.6);font-size:.82rem;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{max-width:var(--max);margin:1.5rem auto 0;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.09);font-size:.75rem;color:rgba(255,255,255,.3);text-align:center;}
+
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  .cat-grid{grid-template-columns:1fr 1fr;}
+  .dark-grid{grid-template-columns:1fr;}
+  .conf-grid{grid-template-columns:1fr;}
+  .metrics-grid{grid-template-columns:1fr 1fr;}
+  .blog-grid{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+  section{padding:3rem 1.5rem;}
+  .hero{padding:3.5rem 1.5rem 3rem;}
+}
+@media(max-width:600px){
+  .cat-grid{grid-template-columns:1fr;}
+  .metrics-grid{grid-template-columns:1fr;}
+  .blog-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+  .hero-stats{grid-template-columns:1fr 1fr;}
+}
+</style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<nav><div class="nav-inner">
-  <a class="nav-logo" href="index.html"><span>⚽</span>Global Football Hub</a>
-  <ul class="nav-links">
-    <li><a href="start-here.html">Start Here</a></li>
-    <li><a href="leagues.html">Leagues</a></li>
-    <li><a href="tournaments.html">Tournaments</a></li>
-    <li><a href="analysis.html">Analysis</a></li>
-    <li><a href="fantasy.html">Fantasy</a></li>
-    <li><a href="fixtures.html">Fixtures</a></li>
-    <li><a href="odds.html" class="cta">Betting Guide</a></li>
-  </ul>
-</div></nav>
-<div class="nav-contact">Football Fan Guide &mdash; contact: <a href="mailto:hello@globalfootballhub.com">hello@globalfootballhub.com</a></div>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-eye">Free Football Guides</div>
-    <h1>Follow football the right way</h1>
-    <p>Leagues, tactics, fantasy tips, fixtures and betting guides — everything a football fan needs, in one place. Updated every season.</p>
-    <div class="hero-btns">
-      <a href="odds.html" class="btn btn-accent">Build my betting guide</a>
-      <a href="start-here.html" class="btn btn-outline">Start here</a>
-    </div>
-    <div class="hero-badges">
-      <span class="badge">Original content</span>
-      <span class="badge">Ads‑safe</span>
-      <span class="badge">Updated 2025</span>
-    </div>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-badge">🏀</span>USATap</a>
+    <ul class="nav-links">
+      <li><a href="start-here.html">Start Here</a></li>
+      <li><a href="teams.html">Teams</a></li>
+      <li><a href="standings.html">Standings</a></li>
+      <li><a href="analysis.html">Analysis</a></li>
+      <li><a href="fantasy.html">Fantasy</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="start-here.html" class="nav-cta">Start Here</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="t-item"><span class="t-dot">●</span>Eastern Conference</span>
+    <span class="t-item"><span class="t-dot">●</span>Western Conference</span>
+    <span class="t-item"><span class="t-dot">●</span>NBA Playoffs</span>
+    <span class="t-item"><span class="t-dot">●</span>Play-In Tournament</span>
+    <span class="t-item"><span class="t-dot">●</span>Fantasy Basketball</span>
+    <span class="t-item"><span class="t-dot">●</span>NBA Finals</span>
+    <span class="t-item"><span class="t-dot">●</span>Player Analysis</span>
+    <span class="t-item"><span class="t-dot">●</span>2025 Season Guide</span>
+    <span class="t-item"><span class="t-dot">●</span>30 Teams Covered</span>
+    <span class="t-item"><span class="t-dot">●</span>Eastern Conference</span>
+    <span class="t-item"><span class="t-dot">●</span>Western Conference</span>
+    <span class="t-item"><span class="t-dot">●</span>NBA Playoffs</span>
+    <span class="t-item"><span class="t-dot">●</span>Play-In Tournament</span>
+    <span class="t-item"><span class="t-dot">●</span>Fantasy Basketball</span>
+    <span class="t-item"><span class="t-dot">●</span>NBA Finals</span>
+    <span class="t-item"><span class="t-dot">●</span>Player Analysis</span>
+    <span class="t-item"><span class="t-dot">●</span>2025 Season Guide</span>
+    <span class="t-item"><span class="t-dot">●</span>30 Teams Covered</span>
   </div>
 </div>
 
-<div class="page-wrap full" id="main">
-  <main>
-    <div class="card-grid" style="grid-template-columns:repeat(3,1fr);">
-      <a class="card" href="leagues.html"><span class="card-icon">🏆</span><h3>Leagues</h3><p>Premier League, La Liga, Bundesliga, Serie A and Ligue 1 — formats, clubs and standings explained.</p></a>
-      <a class="card" href="tournaments.html"><span class="card-icon">🌍</span><h3>Tournaments</h3><p>Champions League, World Cup, Euros, Copa América — how each competition works from group stage to final.</p></a>
-      <a class="card" href="analysis.html"><span class="card-icon">📐</span><h3>Tactics & Analysis</h3><p>Formations, pressing systems, set pieces and the modern stats every serious fan should understand.</p></a>
-      <a class="card" href="fantasy.html"><span class="card-icon">🎮</span><h3>Fantasy Football</h3><p>FPL strategy, captain picks, transfer tips and differential suggestions for every gameweek.</p></a>
-      <a class="card" href="fixtures.html"><span class="card-icon">📅</span><h3>Fixtures & Results</h3><p>Key match guides across the top leagues — what to watch, when to watch, and what is at stake.</p></a>
-      <a class="card" href="odds.html"><span class="card-icon">📊</span><h3>Betting Guide</h3><p>Markets explained, odds decoded, and responsible gambling advice for new and experienced bettors.</p></a>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eye">The NBA Fan's Complete Guide</div>
+      <h1>Your Free NBA Guide for 2025</h1>
+      <p class="hero-p">All 30 teams, standings, player breakdowns, fantasy strategy and season analysis — everything a US basketball fan needs, completely free and updated all season long.</p>
+      <div class="hero-btns">
+        <a href="start-here.html" class="btn-primary">Start Here — Free Guide</a>
+        <a href="teams.html" class="btn-secondary">Browse All 30 Teams</a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge">🏀 All 30 NBA Teams</span>
+        <span class="badge">📊 Stats Explained</span>
+        <span class="badge">🎮 Fantasy Tips</span>
+        <span class="badge">🇺🇸 Built for US Fans</span>
+      </div>
     </div>
-
-    <h2>Typical season overview by tier</h2>
-    <table class="data-table">
-      <tr><th>League</th><th>Teams</th><th>Season</th><th>UCL Spots</th></tr>
-      <tr><td>Premier League 🏴󠁧󠁢󠁥󠁮󠁧󠁿</td><td>20</td><td>Aug – May</td><td>Top 4</td></tr>
-      <tr><td>La Liga 🇪🇸</td><td>20</td><td>Aug – May</td><td>Top 4</td></tr>
-      <tr><td>Bundesliga 🇩🇪</td><td>18</td><td>Aug – May</td><td>Top 4</td></tr>
-      <tr><td>Serie A 🇮🇹</td><td>20</td><td>Aug – May</td><td>Top 4</td></tr>
-      <tr><td>Ligue 1 🇫🇷</td><td>18</td><td>Aug – May</td><td>Top 3</td></tr>
-    </table>
-    <p style="font-size:.78rem;color:#999;font-family:Arial,sans-serif;">Data is indicative. Always confirm with official league sources. Last updated 2025.</p>
-
-    <div class="checklist">
-      <h3>Quick checklist — new football fan</h3>
-      <ul>
-        <li>Pick a club to follow in your favourite league</li>
-        <li>Download a live scores app for matchday alerts</li>
-        <li>Learn the offside rule — it changes everything</li>
-        <li>Follow one fantasy football league to stay engaged</li>
-      </ul>
+    <div class="hero-stats">
+      <div class="stat-card"><div class="stat-num">30</div><div class="stat-label">NBA Teams</div></div>
+      <div class="stat-card"><div class="stat-num">82</div><div class="stat-label">Season Games</div></div>
+      <div class="stat-card"><div class="stat-num">16</div><div class="stat-label">Playoff Teams</div></div>
+      <div class="stat-card"><div class="stat-num">2025</div><div class="stat-label">Season Covered</div></div>
     </div>
+  </div>
+</section>
 
-    <div class="how-box">
-      <h3>How to get started</h3>
-      <ol>
-        <li>Read the <a href="start-here.html">Start Here</a> guide for complete beginners.</li>
-        <li>Pick your league and read the full <a href="leagues.html">Leagues guide</a>.</li>
-        <li>Check the <a href="fixtures.html">Fixtures</a> page for this week's key matches.</li>
-        <li>Join a <a href="fantasy.html">Fantasy Football</a> league to make every game matter.</li>
-      </ol>
-      <a class="more-link" href="start-here.html">See the full beginner guide →</a>
+<!-- CATEGORIES -->
+<section id="guides">
+  <div class="section-inner">
+    <div class="section-label">What we cover</div>
+    <h2>Six essential NBA guides</h2>
+    <p class="section-intro">From your first game to fantasy basketball domination — six free guides every US basketball fan should read.</p>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <div class="cat-img navy">🏆</div>
+        <div class="cat-body">
+          <span class="cat-tag">Teams</span>
+          <h3>All 30 NBA Teams</h3>
+          <p>Every franchise in the Eastern and Western Conference — history, home arenas, key rivalries and 2025 season outlook for each team.</p>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img red">📊</div>
+        <div class="cat-body">
+          <span class="cat-tag">Standings</span>
+          <h3>Conference Standings & Playoffs</h3>
+          <p>Eastern and Western tables, the play-in tournament format, playoff seeding rules and how every position in the standings affects your team.</p>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img gold">📐</div>
+        <div class="cat-body">
+          <span class="cat-tag">Analysis</span>
+          <h3>Player Stats & Analytics</h3>
+          <p>PER, true shooting %, usage rate, on/off splits — the advanced metrics that actually show which players are making a real impact.</p>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img blue">🎮</div>
+        <div class="cat-body">
+          <span class="cat-tag">Fantasy</span>
+          <h3>Fantasy Basketball Guide</h3>
+          <p>Draft strategy, waiver wire pickups, streaming tips and category management for season-long and daily fantasy leagues.</p>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img dark">📅</div>
+        <div class="cat-body">
+          <span class="cat-tag">Schedule</span>
+          <h3>Schedule & TV Guide 2025</h3>
+          <p>Key matchups, nationally televised games, back-to-backs and a complete guide to watching every NBA game in the United States.</p>
+        </div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-img mix">🏀</div>
+        <div class="cat-body">
+          <span class="cat-tag">Beginner</span>
+          <h3>New to the NBA? Start Here</h3>
+          <p>Rules, positions, shot clock, fouls and how a full season works — the essential starting point for brand-new basketball fans.</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="disclosure">⚠️ Affiliate disclosure: some links on this site may earn us a commission at no extra cost to you. We only recommend services we believe are relevant and fair. <a href="affiliate-disclosure.html">Read our full disclosure.</a></div>
-  </main>
+<!-- ABOUT SECTION -->
+<section class="dark-section" id="about">
+  <div class="section-inner">
+    <div class="dark-grid">
+      <div>
+        <div class="section-label">Our mission</div>
+        <h2>Basketball is more than a sport</h2>
+        <p>In the United States, the NBA is culture. From the first buzzer-beater you witness live to the rivalries that define entire cities — basketball connects communities, generations and fans in a way few sports can match.</p>
+        <p>We built USATap to give American fans the depth they deserve — not just scores, but the context, analysis and stories behind every game and every player.</p>
+        <a href="start-here.html" class="btn-primary" style="margin-top:.5rem;display:inline-block;">Read the beginner guide</a>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">1</div>
+          <div>
+            <h4>Plain-English analysis</h4>
+            <p>We break down advanced stats and tactical concepts so that any fan — new or experienced — can understand what's really happening on the court.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">2</div>
+          <div>
+            <h4>Built for US fans</h4>
+            <p>TV schedules, streaming guides and content built around the American basketball calendar — Eastern and Pacific Time, every broadcaster covered.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">3</div>
+          <div>
+            <h4>Completely free</h4>
+            <p>Every guide, every table, every tip on USATap is free to read. No paywalls, no mandatory sign-ups, no subscription required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCE DEEP DIVE -->
+<section class="conf-section" id="conferences">
+  <div class="section-inner">
+    <div class="section-label">The Conferences</div>
+    <h2>Eastern vs Western Conference</h2>
+    <p class="section-intro">The NBA's 30 teams are split into two conferences of 15 teams each, further divided into three divisions. The top 6 from each conference make the playoffs — seeds 7–10 enter the play-in.</p>
+    <div class="conf-grid">
+      <div class="conf-block">
+        <h3>🏙️ Eastern Conference</h3>
+        <ul>
+          <li><strong>Atlantic Division</strong><span>Celtics, Nets, Knicks, 76ers, Raptors</span></li>
+          <li><strong>Central Division</strong><span>Bulls, Cavaliers, Pistons, Pacers, Bucks</span></li>
+          <li><strong>Southeast Division</strong><span>Hawks, Hornets, Heat, Magic, Wizards</span></li>
+          <li><strong>Playoff spots</strong><span>Top 6 auto-qualify</span></li>
+          <li><strong>Play-In</strong><span>Seeds 7–10 compete</span></li>
+        </ul>
+      </div>
+      <div class="conf-block west">
+        <h3>🌅 Western Conference</h3>
+        <ul>
+          <li><strong>Northwest Division</strong><span>Nuggets, Wolves, Thunder, Blazers, Jazz</span></li>
+          <li><strong>Pacific Division</strong><span>Warriors, Clippers, Lakers, Suns, Kings</span></li>
+          <li><strong>Southwest Division</strong><span>Mavericks, Rockets, Grizzlies, Pelicans, Spurs</span></li>
+          <li><strong>Playoff spots</strong><span>Top 6 auto-qualify</span></li>
+          <li><strong>Play-In</strong><span>Seeds 7–10 compete</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY STATS METRICS -->
+<section class="metrics-section">
+  <div class="section-inner">
+    <div class="section-label">Stats 101</div>
+    <h2>NBA stats every fan should know</h2>
+    <p class="section-intro">Modern basketball is driven by data. Here are the three metrics that every serious fan should understand before reading any analysis.</p>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-icon">📐</div>
+        <h3>Player Efficiency Rating (PER)</h3>
+        <p>A per-minute stat that rates a player's overall contribution. The league average is always 15.0. Stars typically post 20+, while elite MVP-level seasons reach 30+.</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon">🎯</div>
+        <h3>True Shooting % (TS%)</h3>
+        <p>Measures shooting efficiency accounting for two-pointers, three-pointers and free throws. Far more accurate than basic field goal % for comparing scorers across eras.</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-icon">🔄</div>
+        <h3>Usage Rate (USG%)</h3>
+        <p>The percentage of team plays used by a player while on the court. High-usage players shoulder more offensive responsibility — useful context when evaluating scoring numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES / BLOG -->
+<section id="blog">
+  <div class="section-inner">
+    <div class="section-label">Fan guides</div>
+    <h2>Essential NBA reads</h2>
+    <p class="section-intro">Deep dives on rules, history, tactics and the stories that define the modern NBA.</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,var(--navy),var(--blue));">🏆</div>
+        <div class="blog-body">
+          <div class="blog-meta">Rules · 5 min read</div>
+          <h3>How the NBA playoff format actually works</h3>
+          <p>Play-in, seeding, brackets and best-of-7 — everything you need to understand the postseason from start to finish.</p>
+          <a href="standings.html" class="read-more">Read more →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,var(--red),#e84070);">🎮</div>
+        <div class="blog-body">
+          <div class="blog-meta">Fantasy · 7 min read</div>
+          <h3>Fantasy basketball draft strategy for beginners</h3>
+          <p>When to draft a point guard, how to handle injured players and why category balance matters more than star power.</p>
+          <a href="fantasy.html" class="read-more">Read more →</a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-img" style="background:linear-gradient(135deg,#7a4f00,var(--gold));">📊</div>
+        <div class="blog-body">
+          <div class="blog-meta">Analysis · 6 min read</div>
+          <h3>Why points per game is a misleading stat</h3>
+          <p>How true shooting %, usage rate and on/off data give you a much clearer picture of which scorers are actually efficient.</p>
+          <a href="analysis.html" class="read-more">Read more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-label">Common questions</div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">How many teams are in the NBA?</span><span>+</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The NBA has 30 teams split into two conferences — 15 in the Eastern Conference and 15 in the Western Conference. Each conference has three divisions of five teams each.</span></div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">How does the NBA playoff system work?</span><span>+</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The top 6 teams from each conference qualify directly for the playoffs. Seeds 7–10 enter the play-in tournament to compete for the final two spots per conference. The playoffs then consist of four rounds of best-of-7 series, ending with the NBA Finals.</span></div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">Where can I watch NBA games in the USA?</span><span>+</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">NBA games air on ESPN, ABC, TNT and NBA TV in the United States. NBA League Pass lets you stream every game live. Amazon Prime Video holds rights to select games. Our Schedule page has a full TV guide for every broadcaster.</span></div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">What is the shot clock in basketball?</span><span>+</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The shot clock gives the offensive team 24 seconds to attempt a shot that hits the rim. If they fail, possession is turned over. Introduced in 1954, it is the rule that makes NBA basketball so fast-paced and high-scoring compared to other levels of the game.</span></div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">How do I get started with fantasy basketball?</span><span>+</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Create a free account on ESPN, Yahoo Sports or NBA.com, start or join a league, then participate in a draft where each manager selects real NBA players. Your team earns points based on those players' real weekly statistics. Read our Fantasy Guide for a full strategy breakdown.</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="section-inner" style="text-align:center;">
+    <h2>Ready to follow every game?</h2>
+    <p>Start with our beginner guide, find your team and never miss a key moment of the 2025 NBA season.</p>
+    <a href="start-here.html" class="btn-dark">Start Here — Free Guide</a>
+    <a href="teams.html" class="btn-dark">Browse All 30 Teams</a>
+  </div>
 </div>
 
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">Get in touch</div>
+        <h2>We'd love to hear from you</h2>
+        <p style="color:var(--muted);font-size:.95rem;line-height:1.75;margin-bottom:1rem;">Got a question about a rule, a suggestion for a team guide, or want to debate the greatest franchise in NBA history? We read every message.</p>
+        <p style="color:var(--muted);font-size:.95rem;line-height:1.75;">Whether you're a brand-new fan trying to understand the game or a lifelong supporter who wants deeper analysis — this is your community.</p>
+      </div>
+      <div>
+        <div class="contact-form">
+          <input type="text" placeholder="Your name"/>
+          <input type="email" placeholder="Email address"/>
+          <textarea placeholder="Your message..."></textarea>
+          <button class="form-submit" onclick="this.textContent='✓ Sent!';this.disabled=true;this.style.background='#1d428a';">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand"><div style="color:#fff;font-family:'Arial Black',sans-serif;font-size:1.05rem;font-weight:900;">⚽ Global Football Hub</div><p>Follow the game. Understand the game.<br>Free guides for fans worldwide.</p></div>
-    <div class="footer-col"><h4>Explore</h4><ul><li><a href="leagues.html">Top Leagues</a></li><li><a href="tournaments.html">Tournaments</a></li><li><a href="analysis.html">Tactics & Analysis</a></li><li><a href="fantasy.html">Fantasy Football</a></li></ul></div>
-    <div class="footer-col"><h4>Plan</h4><ul><li><a href="fixtures.html">Fixtures</a></li><li><a href="odds.html">Betting Guide</a></li><li><a href="start-here.html">Start Here</a></li><li><a href="about.html">About</a></li></ul></div>
-    <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-brand">
+      <div style="color:#fff;font-family:'Arial Black',sans-serif;font-size:1.1rem;font-weight:900;">🏀 USATap</div>
+      <p>Free NBA guides for American basketball fans.<br>Know the game. Follow the game.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul>
+      <li><a href="teams.html">NBA Teams</a></li>
+      <li><a href="standings.html">Standings</a></li>
+      <li><a href="analysis.html">Player Analysis</a></li>
+      <li><a href="fantasy.html">Fantasy Basketball</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Guides</h4><ul>
+      <li><a href="start-here.html">Start Here</a></li>
+      <li><a href="schedule.html">Schedule & TV</a></li>
+      <li><a href="about.html">About USATap</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom">© 2025 Global Football Hub. Content is informational only. Always gamble responsibly.</div>
+  <div class="footer-bottom">© 2025 USATap. Independent fan guide. Not affiliated with or endorsed by the NBA. For informational and entertainment purposes only.</div>
 </footer>
+
+<script>
+function toggleFAQ(el){
+  var a=el.nextElementSibling,i=el.querySelector('span:last-child'),o=a.style.display==='block';
+  a.style.display=o?'none':'block';
+  i.textContent=o?'+':'−';
+}
+document.querySelectorAll('.faq-a').forEach(function(a){a.style.display='none';});
+</script>
 <script src="assets/popup.js"></script>
 <script>window.PopupIndex();</script>
-</body></html>
+</body>
+</html>
