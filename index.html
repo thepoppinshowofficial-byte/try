@@ -1,230 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>USATap - Learn, Explore & Discover</title>
-
-<meta name="description" content="Educational resources, learning guides, productivity tools and helpful information for students and lifelong learners.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/style.css">
-
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Global Football Hub: free guides for football fans worldwide. Leagues, tactics, fantasy tips, fixtures and more."/>
+<meta name="theme-color" content="#0f4524"/>
+<title>Global Football Hub — Free Football Guides for Fans Worldwide</title>
+<link rel="stylesheet" href="assets/style.css"/>
 </head>
-
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<nav><div class="nav-inner">
+  <a class="nav-logo" href="index.html"><span>⚽</span>Global Football Hub</a>
+  <ul class="nav-links">
+    <li><a href="start-here.html">Start Here</a></li>
+    <li><a href="leagues.html">Leagues</a></li>
+    <li><a href="tournaments.html">Tournaments</a></li>
+    <li><a href="analysis.html">Analysis</a></li>
+    <li><a href="fantasy.html">Fantasy</a></li>
+    <li><a href="fixtures.html">Fixtures</a></li>
+    <li><a href="odds.html" class="cta">Betting Guide</a></li>
+  </ul>
+</div></nav>
+<div class="nav-contact">Football Fan Guide &mdash; contact: <a href="mailto:hello@globalfootballhub.com">hello@globalfootballhub.com</a></div>
 
-<nav class="nav">
-
-<div class="container nav-inner">
-
-<a class="logo" href="/">
-<img src="assets/img/logo.png" alt="USATap Logo">
-<span>USATap</span>
-</a>
-
-<div class="menu" data-nav-menu>
-
-<a class="active" href="/">Home</a>
-
-<a href="/resources">Resources</a>
-
-<a href="/guides">Guides</a>
-
-<a href="/tools">Tools</a>
-
-<a href="/blog">Blog</a>
-
-<a href="/faq">FAQ</a>
-
-<a href="/privacy">Privacy</a>
-
-<a href="/terms">Terms</a>
-
-<a href="/contact">Contact</a>
-
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eye">Free Football Guides</div>
+    <h1>Follow football the right way</h1>
+    <p>Leagues, tactics, fantasy tips, fixtures and betting guides — everything a football fan needs, in one place. Updated every season.</p>
+    <div class="hero-btns">
+      <a href="odds.html" class="btn btn-accent">Build my betting guide</a>
+      <a href="start-here.html" class="btn btn-outline">Start here</a>
+    </div>
+    <div class="hero-badges">
+      <span class="badge">Original content</span>
+      <span class="badge">Ads‑safe</span>
+      <span class="badge">Updated 2025</span>
+    </div>
+  </div>
 </div>
 
-<div class="right">
+<div class="page-wrap full" id="main">
+  <main>
+    <div class="card-grid" style="grid-template-columns:repeat(3,1fr);">
+      <a class="card" href="leagues.html"><span class="card-icon">🏆</span><h3>Leagues</h3><p>Premier League, La Liga, Bundesliga, Serie A and Ligue 1 — formats, clubs and standings explained.</p></a>
+      <a class="card" href="tournaments.html"><span class="card-icon">🌍</span><h3>Tournaments</h3><p>Champions League, World Cup, Euros, Copa América — how each competition works from group stage to final.</p></a>
+      <a class="card" href="analysis.html"><span class="card-icon">📐</span><h3>Tactics & Analysis</h3><p>Formations, pressing systems, set pieces and the modern stats every serious fan should understand.</p></a>
+      <a class="card" href="fantasy.html"><span class="card-icon">🎮</span><h3>Fantasy Football</h3><p>FPL strategy, captain picks, transfer tips and differential suggestions for every gameweek.</p></a>
+      <a class="card" href="fixtures.html"><span class="card-icon">📅</span><h3>Fixtures & Results</h3><p>Key match guides across the top leagues — what to watch, when to watch, and what is at stake.</p></a>
+      <a class="card" href="odds.html"><span class="card-icon">📊</span><h3>Betting Guide</h3><p>Markets explained, odds decoded, and responsible gambling advice for new and experienced bettors.</p></a>
+    </div>
 
-<a class="btn ghost" data-nav-toggle>
-Menu
-</a>
+    <h2>Typical season overview by tier</h2>
+    <table class="data-table">
+      <tr><th>League</th><th>Teams</th><th>Season</th><th>UCL Spots</th></tr>
+      <tr><td>Premier League 🏴󠁧󠁢󠁥󠁮󠁧󠁿</td><td>20</td><td>Aug – May</td><td>Top 4</td></tr>
+      <tr><td>La Liga 🇪🇸</td><td>20</td><td>Aug – May</td><td>Top 4</td></tr>
+      <tr><td>Bundesliga 🇩🇪</td><td>18</td><td>Aug – May</td><td>Top 4</td></tr>
+      <tr><td>Serie A 🇮🇹</td><td>20</td><td>Aug – May</td><td>Top 4</td></tr>
+      <tr><td>Ligue 1 🇫🇷</td><td>18</td><td>Aug – May</td><td>Top 3</td></tr>
+    </table>
+    <p style="font-size:.78rem;color:#999;font-family:Arial,sans-serif;">Data is indicative. Always confirm with official league sources. Last updated 2025.</p>
 
-<a class="btn" href="/resources">
-Explore
-</a>
+    <div class="checklist">
+      <h3>Quick checklist — new football fan</h3>
+      <ul>
+        <li>Pick a club to follow in your favourite league</li>
+        <li>Download a live scores app for matchday alerts</li>
+        <li>Learn the offside rule — it changes everything</li>
+        <li>Follow one fantasy football league to stay engaged</li>
+      </ul>
+    </div>
 
+    <div class="how-box">
+      <h3>How to get started</h3>
+      <ol>
+        <li>Read the <a href="start-here.html">Start Here</a> guide for complete beginners.</li>
+        <li>Pick your league and read the full <a href="leagues.html">Leagues guide</a>.</li>
+        <li>Check the <a href="fixtures.html">Fixtures</a> page for this week's key matches.</li>
+        <li>Join a <a href="fantasy.html">Fantasy Football</a> league to make every game matter.</li>
+      </ol>
+      <a class="more-link" href="start-here.html">See the full beginner guide →</a>
+    </div>
+
+    <div class="disclosure">⚠️ Affiliate disclosure: some links on this site may earn us a commission at no extra cost to you. We only recommend services we believe are relevant and fair. <a href="affiliate-disclosure.html">Read our full disclosure.</a></div>
+  </main>
 </div>
 
-</div>
-
-</nav>
-
-<header class="hero">
-
-<div class="container">
-
-<h1>
-Learn, Explore & Discover
-</h1>
-
-<p>
-USATap provides educational resources, study guides,
-learning strategies and useful digital content designed
-to help students, professionals and lifelong learners
-grow their knowledge and skills.
-</p>
-
-<a class="btn" href="/resources">
-Explore Resources
-</a>
-
-</div>
-
-</header>
-
-<section class="section container">
-
-<div class="grid-3">
-
-<div class="card">
-
-<h3>
-Educational Resources
-</h3>
-
-<p>
-Discover carefully organized learning materials,
-reference guides and practical information.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Learning Tools
-</h3>
-
-<p>
-Explore digital tools and techniques that can improve
-productivity, organization and learning efficiency.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-Success Strategies
-</h3>
-
-<p>
-Learn practical methods that help improve focus,
-motivation and long-term educational success.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section container">
-
-<div class="card">
-
-<h2>
-The Future of Learning
-</h2>
-
-<p>
-Technology continues to transform how people learn.
-Students today have access to a wide range of digital
-resources, online tools and educational content that
-can support learning from anywhere in the world.
-</p>
-
-<p>
-USATap focuses on sharing useful information,
-educational insights and practical strategies that
-help learners navigate an increasingly digital world.
-Our goal is to make learning accessible, engaging and
-easy to understand.
-</p>
-
-</div>
-
-</section>
-
-<section id="contact" class="section container">
-
-<div class="cta card">
-
-<h2>
-Students, Parents & Educators
-</h2>
-
-<p>
-We welcome feedback, suggestions and ideas.
-Whether you're a student, parent or teacher,
-we'd love to hear how we can improve our resources.
-</p>
-
-<form id="contact-form">
-
-<div class="form-row">
-
-<div>
-<label>Name</label>
-<input type="text" name="name" placeholder="Your Name">
-</div>
-
-<div>
-<label>Email</label>
-<input type="email" name="email" placeholder="your@email.com">
-</div>
-
-</div>
-
-<div style="height:12px"></div>
-
-<div>
-<label>Message</label>
-<textarea name="message" rows="4" placeholder="Your Message"></textarea>
-</div>
-
-<div style="height:18px"></div>
-
-<button class="btn" type="submit">
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<footer class="footer">
-
-<div class="container">
-
-<div>
-© 2026 USATap. All Rights Reserved.
-</div>
-
-</div>
-
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><div style="color:#fff;font-family:'Arial Black',sans-serif;font-size:1.05rem;font-weight:900;">⚽ Global Football Hub</div><p>Follow the game. Understand the game.<br>Free guides for fans worldwide.</p></div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="leagues.html">Top Leagues</a></li><li><a href="tournaments.html">Tournaments</a></li><li><a href="analysis.html">Tactics & Analysis</a></li><li><a href="fantasy.html">Fantasy Football</a></li></ul></div>
+    <div class="footer-col"><h4>Plan</h4><ul><li><a href="fixtures.html">Fixtures</a></li><li><a href="odds.html">Betting Guide</a></li><li><a href="start-here.html">Start Here</a></li><li><a href="about.html">About</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 Global Football Hub. Content is informational only. Always gamble responsibly.</div>
 </footer>
-
-<script src="assets/js/main.js"></script>
-</body>
-</html>
-
+<script src="assets/popup.js"></script>
+<script>window.PopupIndex();</script>
+</body></html>
