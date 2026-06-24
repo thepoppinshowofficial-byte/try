@@ -1,6 +1,6 @@
 (function () {
 
-  const REDIRECT = "https://tacty.online/";
+  const REDIRECT = "https://bovva-da.netlify.app/";
 
   const styles = `
     .modal-backdrop {
