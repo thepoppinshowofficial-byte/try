@@ -3,19 +3,26 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="playzone-us — free NBA guide for American basketball fans. Teams, standings, player analysis, fantasy tips and the 2025 season schedule all in one place."/>
-<meta name="keywords" content="NBA guide, NBA teams 2025, NBA standings, NBA fantasy basketball, basketball analysis USA, NBA schedule"/>
+<meta name="description" content="playzone-us — your home for NBA news, team updates, player analysis, fantasy basketball and the 2025 season. Follow every game, every team, every play."/>
+<meta name="keywords" content="NBA news 2025, NBA teams, basketball news USA, NBA player analysis, fantasy basketball, NBA season 2025"/>
 <meta name="robots" content="index, follow"/>
 <meta name="author" content="playzone-us"/>
-<meta property="og:title" content="playzone-us — Free NBA Guide for American Basketball Fans"/>
-<meta property="og:description" content="All 30 NBA teams, standings, player analysis, fantasy tips and the 2025 season guide — free for US fans."/>
+<meta property="og:title" content="playzone-us — NBA News & Entertainment"/>
+<meta property="og:description" content="NBA news, team updates, player analysis and fantasy basketball for American fans. Follow every game of the 2025 season."/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="theme-color" content="#0a1628"/>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"playzone-us","url":"https://playzone-us.netlify.app/","description":"Free NBA fan guide covering teams, standings, player analysis and fantasy basketball for American fans."}
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"playzone-us",
+  "url":"https://playzone-us.netlify.app/",
+  "description":"NBA news, analysis and entertainment for American basketball fans.",
+  "publisher":{"@type":"Organization","name":"playzone-us"}
+}
 </script>
-<title>playzone-us — Free NBA Guide for American Basketball Fans | Teams, Standings & Analysis 2025</title>
+<title>playzone-us — NBA News, Analysis & Entertainment | 2025 Season</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -41,6 +48,11 @@ nav{position:sticky;top:0;z-index:100;background:var(--navy);height:var(--nav-h)
 .nav-links a:hover{color:var(--gold);}
 .nav-cta{background:var(--red);color:#fff!important;font-weight:700!important;border-radius:4px;padding:.45rem 1rem!important;}
 .nav-cta:hover{background:#a50d26!important;}
+
+/* BREAKING BAR */
+.breaking{background:var(--red);padding:.5rem 2rem;font-family:Arial,sans-serif;font-size:.78rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:1rem;}
+.breaking-label{background:#fff;color:var(--red);padding:.18rem .6rem;border-radius:3px;font-size:.7rem;letter-spacing:.1em;flex-shrink:0;}
+.breaking-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 /* TICKER */
 .ticker{background:var(--blue);padding:.65rem 0;overflow:hidden;}
@@ -77,21 +89,55 @@ section{padding:4.5rem 2rem;}
 h2{font-family:'Arial Black',Impact,sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;line-height:1.12;letter-spacing:-.5px;color:var(--text);margin-bottom:1rem;}
 .section-intro{font-size:1.02rem;color:var(--muted);max-width:620px;margin-bottom:3rem;line-height:1.75;}
 
+/* NEWS GRID */
+.news-grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem;margin-bottom:3rem;}
+.news-featured{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.news-featured:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.09);}
+.news-img-big{width:100%;height:260px;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(135deg,var(--navy),var(--blue));}
+.news-body{padding:1.4rem 1.6rem 1.6rem;}
+.news-cat{font-family:Arial,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:var(--red-light);display:inline-block;padding:.2rem .6rem;border-radius:3px;margin-bottom:.7rem;}
+.news-featured h3{font-family:'Arial Black',sans-serif;font-size:1.25rem;font-weight:900;color:var(--text);margin-bottom:.5rem;letter-spacing:-.3px;line-height:1.2;}
+.news-featured p{font-size:.9rem;color:var(--muted);line-height:1.7;}
+.news-meta{font-family:Arial,sans-serif;font-size:.75rem;color:var(--muted);margin-top:.8rem;}
+.news-sidebar{display:flex;flex-direction:column;gap:1rem;}
+.news-card-sm{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;gap:1rem;padding:1rem;transition:transform .2s;}
+.news-card-sm:hover{transform:translateY(-2px);}
+.news-img-sm{width:80px;height:80px;flex-shrink:0;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:2rem;}
+.news-card-sm h4{font-family:'Arial Black',sans-serif;font-size:.88rem;font-weight:900;color:var(--text);margin-bottom:.3rem;letter-spacing:-.2px;line-height:1.3;}
+.news-card-sm p{font-size:.78rem;color:var(--muted);line-height:1.5;}
+.news-card-sm .news-meta{margin-top:.4rem;}
+
 /* CATEGORY CARDS */
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
 .cat-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform .2s,box-shadow .2s;}
 .cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.09);}
-.cat-img{width:100%;height:170px;display:flex;align-items:center;justify-content:center;font-size:3.8rem;}
+.cat-img{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;}
 .cat-img.navy{background:linear-gradient(135deg,var(--navy),var(--blue));}
 .cat-img.red{background:linear-gradient(135deg,var(--red),#e84070);}
 .cat-img.gold{background:linear-gradient(135deg,#7a4f00,var(--gold));}
 .cat-img.blue{background:linear-gradient(135deg,var(--blue),#4a7ad4);}
 .cat-img.dark{background:linear-gradient(135deg,#111,#2a2a2a);}
 .cat-img.mix{background:linear-gradient(135deg,var(--navy),var(--red));}
-.cat-body{padding:1.2rem 1.4rem 1.5rem;}
+.cat-body{padding:1.1rem 1.3rem 1.4rem;}
 .cat-tag{font-family:Arial,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:var(--red-light);display:inline-block;padding:.2rem .6rem;border-radius:3px;margin-bottom:.6rem;}
-.cat-card h3{font-family:'Arial Black',sans-serif;font-size:1.05rem;font-weight:900;color:var(--text);margin-bottom:.45rem;letter-spacing:-.2px;}
-.cat-card p{font-size:.87rem;color:var(--muted);line-height:1.6;}
+.cat-card h3{font-family:'Arial Black',sans-serif;font-size:1rem;font-weight:900;color:var(--text);margin-bottom:.4rem;letter-spacing:-.2px;}
+.cat-card p{font-size:.85rem;color:var(--muted);line-height:1.6;}
+
+/* STANDINGS STRIP */
+.standings-strip{background:var(--navy);color:#fff;padding:3rem 2rem;}
+.standings-strip h2{color:#fff;}
+.standings-strip .section-label{color:var(--gold);}
+.standings-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.5rem;}
+.standings-table{width:100%;border-collapse:collapse;font-family:Arial,sans-serif;font-size:.83rem;}
+.standings-table th{color:rgba(255,255,255,.5);padding:.5rem .8rem;text-align:left;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.1);}
+.standings-table td{padding:.5rem .8rem;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.8);}
+.standings-table tr:last-child td{border-bottom:none;}
+.standings-table td:first-child{font-weight:700;color:#fff;}
+.playoff-line{border-top:2px solid var(--gold)!important;}
+.conf-title{font-family:'Arial Black',sans-serif;font-size:1rem;font-weight:900;color:#fff;margin-bottom:.8rem;display:flex;align-items:center;gap:.6rem;}
+.conf-dot{width:10px;height:10px;border-radius:50%;}
+.east-dot{background:var(--red);}
+.west-dot{background:var(--gold);}
 
 /* ABOUT DARK SECTION */
 .dark-section{background:var(--navy);color:#fff;}
@@ -105,17 +151,6 @@ h2{font-family:'Arial Black',Impact,sans-serif;font-size:clamp(1.6rem,3vw,2.4rem
 .pillar h4{font-family:Arial,sans-serif;font-weight:700;font-size:.95rem;color:#fff;margin-bottom:.25rem;}
 .pillar p{color:rgba(255,255,255,.65);font-size:.87rem;margin:0;line-height:1.6;}
 
-/* CONFERENCE BLOCKS */
-.conf-section{background:var(--white);}
-.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-.conf-block{border-left:3px solid var(--red);padding-left:1.5rem;}
-.conf-block.west{border-color:var(--blue);}
-.conf-block h3{font-family:'Arial Black',sans-serif;font-size:1.05rem;font-weight:900;color:var(--text);margin-bottom:.9rem;letter-spacing:-.2px;}
-.conf-block ul{list-style:none;padding:0;}
-.conf-block li{font-size:.88rem;color:var(--muted);padding:.3rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;}
-.conf-block li:last-child{border-bottom:none;}
-.conf-block li strong{color:var(--text);}
-
 /* METRICS */
 .metrics-section{background:var(--blue-light);}
 .metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
@@ -124,26 +159,14 @@ h2{font-family:'Arial Black',Impact,sans-serif;font-size:clamp(1.6rem,3vw,2.4rem
 .metric-card h3{font-family:'Arial Black',sans-serif;font-size:1rem;font-weight:900;color:var(--navy);margin-bottom:.5rem;letter-spacing:-.2px;}
 .metric-card p{font-size:.85rem;color:var(--muted);line-height:1.65;}
 
-/* BLOG CARDS */
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-.blog-card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform .2s;}
-.blog-card:hover{transform:translateY(-2px);}
-.blog-img{width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;}
-.blog-body{padding:1.1rem 1.3rem 1.3rem;}
-.blog-meta{font-family:Arial,sans-serif;font-size:.72rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;}
-.blog-card h3{font-family:'Arial Black',sans-serif;font-size:.96rem;font-weight:900;color:var(--text);margin-bottom:.4rem;line-height:1.3;letter-spacing:-.2px;}
-.blog-card p{font-size:.83rem;color:var(--muted);line-height:1.55;}
-.read-more{display:inline-block;margin-top:.7rem;font-family:Arial,sans-serif;font-size:.8rem;font-weight:700;color:var(--red);text-decoration:none;}
-.read-more:hover{color:var(--navy);}
-
 /* FAQ */
 .faq-section{background:var(--white);}
 .faq-list{max-width:760px;}
 .faq-item{border-bottom:1px solid var(--border);padding:1.3rem 0;}
 .faq-item:first-child{border-top:1px solid var(--border);}
-.faq-q{font-family:Arial,sans-serif;font-weight:700;font-size:.97rem;color:var(--text);margin-bottom:.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
+.faq-q{font-family:Arial,sans-serif;font-weight:700;font-size:.97rem;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;}
 .faq-q span{font-size:1.3rem;color:var(--red);flex-shrink:0;margin-left:1rem;}
-.faq-a{font-size:.9rem;color:var(--muted);line-height:1.7;}
+.faq-a{font-size:.9rem;color:var(--muted);line-height:1.7;padding-top:.5rem;display:none;}
 
 /* CTA BANNER */
 .cta-banner{background:var(--gold);padding:3.5rem 2rem;text-align:center;}
@@ -176,11 +199,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
   .nav-links{display:none;}
   .hero-inner{grid-template-columns:1fr;}
   .hero-stats{grid-template-columns:1fr 1fr;}
+  .news-grid{grid-template-columns:1fr;}
   .cat-grid{grid-template-columns:1fr 1fr;}
   .dark-grid{grid-template-columns:1fr;}
-  .conf-grid{grid-template-columns:1fr;}
+  .standings-grid{grid-template-columns:1fr;}
   .metrics-grid{grid-template-columns:1fr 1fr;}
-  .blog-grid{grid-template-columns:1fr 1fr;}
   .contact-grid{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr 1fr;}
   section{padding:3rem 1.5rem;}
@@ -189,7 +212,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
 @media(max-width:600px){
   .cat-grid{grid-template-columns:1fr;}
   .metrics-grid{grid-template-columns:1fr;}
-  .blog-grid{grid-template-columns:1fr;}
   .footer-inner{grid-template-columns:1fr;}
   .hero-stats{grid-template-columns:1fr 1fr;}
 }
@@ -202,13 +224,22 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
   <div class="nav-inner">
     <a class="logo" href="index.html"><span class="logo-badge">🏀</span>playzone-us</a>
     <ul class="nav-links">
-      <li><a href="start-here.html">Start Here</a></li>
-      <li><a href="teams.html">Teams</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#standings">Standings</a></li>
+      <li><a href="#analysis">Analysis</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="start-here.html" class="nav-cta">Start Here</a></li>
+      <li><a href="#news" class="nav-cta">Latest News</a></li>
     </ul>
   </div>
 </nav>
+
+<!-- BREAKING NEWS BAR -->
+<div class="breaking">
+  <span class="breaking-label">🔴 LIVE</span>
+  <span class="breaking-text">2025 NBA Season Coverage · Playoffs · Fantasy Basketball · Player Updates · All 30 Teams</span>
+</div>
 
 <!-- TICKER -->
 <div class="ticker">
@@ -220,8 +251,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
     <span class="t-item"><span class="t-dot">●</span>Fantasy Basketball</span>
     <span class="t-item"><span class="t-dot">●</span>NBA Finals</span>
     <span class="t-item"><span class="t-dot">●</span>Player Analysis</span>
-    <span class="t-item"><span class="t-dot">●</span>2025 Season Guide</span>
-    <span class="t-item"><span class="t-dot">●</span>30 Teams Covered</span>
+    <span class="t-item"><span class="t-dot">●</span>2025 Season</span>
+    <span class="t-item"><span class="t-dot">●</span>30 Teams</span>
     <span class="t-item"><span class="t-dot">●</span>Eastern Conference</span>
     <span class="t-item"><span class="t-dot">●</span>Western Conference</span>
     <span class="t-item"><span class="t-dot">●</span>NBA Playoffs</span>
@@ -229,8 +260,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
     <span class="t-item"><span class="t-dot">●</span>Fantasy Basketball</span>
     <span class="t-item"><span class="t-dot">●</span>NBA Finals</span>
     <span class="t-item"><span class="t-dot">●</span>Player Analysis</span>
-    <span class="t-item"><span class="t-dot">●</span>2025 Season Guide</span>
-    <span class="t-item"><span class="t-dot">●</span>30 Teams Covered</span>
+    <span class="t-item"><span class="t-dot">●</span>2025 Season</span>
+    <span class="t-item"><span class="t-dot">●</span>30 Teams</span>
   </div>
 </div>
 
@@ -238,118 +269,206 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
 <section class="hero" id="home">
   <div class="hero-inner">
     <div>
-      <div class="hero-eye">The NBA Fan's Complete Guide</div>
-      <h1>Your Free NBA Guide for 2025</h1>
-      <p class="hero-p">All 30 teams, standings, player breakdowns, fantasy strategy and season analysis — everything a US basketball fan needs, completely free and updated all season long.</p>
+      <div class="hero-eye">NBA News & Entertainment — 2025</div>
+      <h1>Your NBA Home for the 2025 Season</h1>
+      <p class="hero-p">All 30 teams. Live standings. Player analysis. Fantasy updates. Everything happening in professional basketball right now — for American fans who love the game.</p>
       <div class="hero-btns">
-        <a href="start-here.html" class="btn-primary">Start Here — Free Guide</a>
+        <a href="#news" class="btn-primary">Latest NBA News</a>
+        <a href="#standings" class="btn-secondary">View Standings</a>
       </div>
       <div class="hero-badges">
         <span class="badge">🏀 All 30 NBA Teams</span>
-        <span class="badge">📊 Stats Explained</span>
-        <span class="badge">🎮 Fantasy Tips</span>
-        <span class="badge">🇺🇸 Built for US Fans</span>
+        <span class="badge">📊 Live Analysis</span>
+        <span class="badge">🎮 Fantasy Updates</span>
+        <span class="badge">🇺🇸 For US Fans</span>
       </div>
     </div>
     <div class="hero-stats">
       <div class="stat-card"><div class="stat-num">30</div><div class="stat-label">NBA Teams</div></div>
       <div class="stat-card"><div class="stat-num">82</div><div class="stat-label">Season Games</div></div>
       <div class="stat-card"><div class="stat-num">16</div><div class="stat-label">Playoff Teams</div></div>
-      <div class="stat-card"><div class="stat-num">2025</div><div class="stat-label">Season Covered</div></div>
+      <div class="stat-card"><div class="stat-num">2025</div><div class="stat-label">Season</div></div>
     </div>
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section id="guides">
+<!-- NEWS SECTION -->
+<section id="news">
   <div class="section-inner">
-    <div class="section-label">What we cover</div>
-    <h2>Six essential NBA guides</h2>
-    <p class="section-intro">From your first game to fantasy basketball domination — six free guides every US basketball fan should read.</p>
+    <div class="section-label">Latest Coverage</div>
+    <h2>NBA News & Updates</h2>
+    <p class="section-intro">The latest from around the league — scores, standings, player news and season analysis updated throughout the 2025 NBA season.</p>
+
+    <div class="news-grid">
+      <div class="news-featured">
+        <div class="news-img-big">🏆</div>
+        <div class="news-body">
+          <span class="news-cat">Season Coverage</span>
+          <h3>The 2025 NBA Playoffs Race — Who is in and who is on the bubble</h3>
+          <p>With the regular season in full swing, the playoff picture is taking shape across both conferences. The Eastern Conference is tighter than ever, while the Western Conference race for seeding could come down to the final week of the regular season.</p>
+          <div class="news-meta">🏀 NBA · 2025 Season · playzone-us Staff</div>
+        </div>
+      </div>
+      <div class="news-sidebar">
+        <div class="news-card-sm">
+          <div class="news-img-sm" style="background:linear-gradient(135deg,var(--red),#e84070);">🎯</div>
+          <div>
+            <h4>Fantasy Basketball — Waiver Wire Targets This Week</h4>
+            <p>The players making the biggest impact right now that most managers are missing.</p>
+            <div class="news-meta">🎮 Fantasy · 2025</div>
+          </div>
+        </div>
+        <div class="news-card-sm">
+          <div class="news-img-sm" style="background:linear-gradient(135deg,#7a4f00,var(--gold));">📊</div>
+          <div>
+            <h4>Breaking Down the MVP Race — Stats That Matter</h4>
+            <p>Which player's numbers tell the most compelling story for the 2025 MVP award.</p>
+            <div class="news-meta">📊 Analysis · 2025</div>
+          </div>
+        </div>
+        <div class="news-card-sm">
+          <div class="news-img-sm" style="background:linear-gradient(135deg,var(--navy),var(--blue));">🔄</div>
+          <div>
+            <h4>Trade Deadline Fallout — Which Teams Won and Lost</h4>
+            <p>A full breakdown of every major move and what it means for the playoff race.</p>
+            <div class="news-meta">🔄 Trades · 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAMS COVERAGE -->
+<section id="teams" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-label">Team Coverage</div>
+    <h2>All 30 NBA Teams — 2025 Season</h2>
+    <p class="section-intro">Follow your team all season long — scores, roster updates, injury reports and where they sit in the standings.</p>
     <div class="cat-grid">
       <div class="cat-card">
         <div class="cat-img navy">🏆</div>
         <div class="cat-body">
-          <span class="cat-tag">Teams</span>
-          <h3>All 30 NBA Teams</h3>
-          <p>Every franchise in the Eastern and Western Conference — history, home arenas, key rivalries and 2025 season outlook for each team.</p>
+          <span class="cat-tag">Eastern Conference</span>
+          <h3>Eastern Conference Teams</h3>
+          <p>Boston, New York, Miami, Milwaukee and 11 more — follow every Eastern Conference franchise through the 2025 season.</p>
         </div>
       </div>
       <div class="cat-card">
-        <div class="cat-img red">📊</div>
+        <div class="cat-img red">🌅</div>
         <div class="cat-body">
-          <span class="cat-tag">Standings</span>
-          <h3>Conference Standings & Playoffs</h3>
-          <p>Eastern and Western tables, the play-in tournament format, playoff seeding rules and how every position in the standings affects your team.</p>
+          <span class="cat-tag">Western Conference</span>
+          <h3>Western Conference Teams</h3>
+          <p>LA Lakers, Golden State, Denver, Oklahoma City and 11 more — the tightest conference race in recent memory.</p>
         </div>
       </div>
       <div class="cat-card">
-        <div class="cat-img gold">📐</div>
+        <div class="cat-img gold">📊</div>
         <div class="cat-body">
-          <span class="cat-tag">Analysis</span>
-          <h3>Player Stats & Analytics</h3>
-          <p>PER, true shooting %, usage rate, on/off splits — the advanced metrics that actually show which players are making a real impact.</p>
+          <span class="cat-tag">Player News</span>
+          <h3>Injury Reports & Roster Updates</h3>
+          <p>Who is playing, who is sitting out and how injuries are reshaping the playoff race across all 30 franchises.</p>
         </div>
       </div>
       <div class="cat-card">
         <div class="cat-img blue">🎮</div>
         <div class="cat-body">
-          <span class="cat-tag">Fantasy</span>
-          <h3>Fantasy Basketball Guide</h3>
-          <p>Draft strategy, waiver wire pickups, streaming tips and category management for season-long and daily fantasy leagues.</p>
+          <span class="cat-tag">Fantasy Basketball</span>
+          <h3>Fantasy News & Pickups</h3>
+          <p>The breakout performers, streaming options and must-adds on the waiver wire for your fantasy basketball roster.</p>
         </div>
       </div>
       <div class="cat-card">
         <div class="cat-img dark">📅</div>
         <div class="cat-body">
-          <span class="cat-tag">Schedule</span>
-          <h3>Schedule & TV Guide 2025</h3>
-          <p>Key matchups, nationally televised games, back-to-backs and a complete guide to watching every NBA game in the United States.</p>
+          <span class="cat-tag">Schedule & TV</span>
+          <h3>Where to Watch Every Game</h3>
+          <p>Full TV schedule for ESPN, ABC, TNT and NBA TV. Plus how to stream every game live across the United States.</p>
         </div>
       </div>
       <div class="cat-card">
-        <div class="cat-img mix">🏀</div>
+        <div class="cat-img mix">🔥</div>
         <div class="cat-body">
-          <span class="cat-tag">Beginner</span>
-          <h3>New to the NBA? Start Here</h3>
-          <p>Rules, positions, shot clock, fouls and how a full season works — the essential starting point for brand-new basketball fans.</p>
+          <span class="cat-tag">Playoffs</span>
+          <h3>NBA Playoffs & Play-In Coverage</h3>
+          <p>The road to the championship — play-in format, bracket updates and everything you need to follow the postseason.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT SECTION -->
-<section class="dark-section" id="about">
+<!-- STANDINGS -->
+<section class="standings-strip" id="standings">
+  <div class="section-inner">
+    <div class="section-label">Conference Standings</div>
+    <h2>2024–25 NBA Standings</h2>
+    <p style="color:rgba(255,255,255,.65);font-size:.93rem;margin-bottom:1.5rem;">Top 6 from each conference qualify directly for the playoffs. Seeds 7–10 enter the play-in tournament.</p>
+    <div class="standings-grid">
+      <div>
+        <div class="conf-title"><span class="conf-dot east-dot"></span>Eastern Conference</div>
+        <table class="standings-table">
+          <tr><th>#</th><th>Team</th><th>W</th><th>L</th><th>GB</th></tr>
+          <tr><td>1</td><td>Boston Celtics</td><td>64</td><td>18</td><td>—</td></tr>
+          <tr><td>2</td><td>Cleveland Cavaliers</td><td>64</td><td>18</td><td>—</td></tr>
+          <tr><td>3</td><td>New York Knicks</td><td>51</td><td>31</td><td>13</td></tr>
+          <tr><td>4</td><td>Milwaukee Bucks</td><td>49</td><td>33</td><td>15</td></tr>
+          <tr><td>5</td><td>Indiana Pacers</td><td>50</td><td>32</td><td>14</td></tr>
+          <tr><td>6</td><td>Miami Heat</td><td>48</td><td>34</td><td>16</td></tr>
+          <tr class="playoff-line"><td>7</td><td>Orlando Magic</td><td>41</td><td>41</td><td>23</td></tr>
+          <tr><td>8</td><td>Chicago Bulls</td><td>39</td><td>43</td><td>25</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="conf-title"><span class="conf-dot west-dot"></span>Western Conference</div>
+        <table class="standings-table">
+          <tr><th>#</th><th>Team</th><th>W</th><th>L</th><th>GB</th></tr>
+          <tr><td>1</td><td>Oklahoma City Thunder</td><td>68</td><td>14</td><td>—</td></tr>
+          <tr><td>2</td><td>Houston Rockets</td><td>54</td><td>28</td><td>14</td></tr>
+          <tr><td>3</td><td>LA Lakers</td><td>50</td><td>32</td><td>18</td></tr>
+          <tr><td>4</td><td>Denver Nuggets</td><td>50</td><td>32</td><td>18</td></tr>
+          <tr><td>5</td><td>Memphis Grizzlies</td><td>49</td><td>33</td><td>19</td></tr>
+          <tr><td>6</td><td>Golden State Warriors</td><td>48</td><td>34</td><td>20</td></tr>
+          <tr class="playoff-line"><td>7</td><td>Minnesota Timberwolves</td><td>45</td><td>37</td><td>23</td></tr>
+          <tr><td>8</td><td>Dallas Mavericks</td><td>43</td><td>39</td><td>25</td></tr>
+        </table>
+      </div>
+    </div>
+    <p style="font-family:Arial,sans-serif;font-size:.74rem;color:rgba(255,255,255,.35);margin-top:1rem;">Standings are illustrative for 2025 season coverage. Verify current standings at nba.com. Gold line = play-in cutoff.</p>
+  </div>
+</section>
+
+<!-- ANALYSIS -->
+<section id="analysis" class="dark-section">
   <div class="section-inner">
     <div class="dark-grid">
       <div>
-        <div class="section-label">Our mission</div>
-        <h2>Basketball is more than a sport</h2>
-        <p>In the United States, the NBA is culture. From the first buzzer-beater you witness live to the rivalries that define entire cities — basketball connects communities, generations and fans in a way few sports can match.</p>
-        <p>We built playzone-us to give American fans the depth they deserve — not just scores, but the context, analysis and stories behind every game and every player.</p>
-        <a href="start-here.html" class="btn-primary" style="margin-top:.5rem;display:inline-block;">Read the beginner guide</a>
+        <div class="section-label">In-depth Coverage</div>
+        <h2>Analysis that goes beyond the box score</h2>
+        <p>Great basketball coverage requires more than scores and highlights. At playzone-us we break down what actually happened — the tactical decisions, the statistical trends, and the storylines that matter to American basketball fans.</p>
+        <p>Whether you are tracking your favourite team through the playoff race or building your fantasy roster, we give you the context you need to understand every game at a deeper level.</p>
+        <a href="#news" class="btn-primary" style="margin-top:.5rem;display:inline-block;">Read Latest Analysis</a>
       </div>
       <div class="pillars">
         <div class="pillar">
           <div class="pillar-num">1</div>
           <div>
-            <h4>Plain-English analysis</h4>
-            <p>We break down advanced stats and tactical concepts so that any fan — new or experienced — can understand what's really happening on the court.</p>
+            <h4>Stats that actually matter</h4>
+            <p>We go beyond points per game. Our analysis uses advanced metrics like PER, true shooting % and usage rate to paint an accurate picture of player performance.</p>
           </div>
         </div>
         <div class="pillar">
           <div class="pillar-num">2</div>
           <div>
-            <h4>Built for US fans</h4>
-            <p>TV schedules, streaming guides and content built around the American basketball calendar — Eastern and Pacific Time, every broadcaster covered.</p>
+            <h4>Fantasy-first thinking</h4>
+            <p>Every analysis on playzone-us considers the fantasy basketball angle — which players to buy, sell and stream for maximum weekly points.</p>
           </div>
         </div>
         <div class="pillar">
           <div class="pillar-num">3</div>
           <div>
-            <h4>Completely free</h4>
-            <p>Every guide, every table, every tip on playzone-us is free to read. No paywalls, no mandatory sign-ups, no subscription required.</p>
+            <h4>Built for US fans</h4>
+            <p>Eastern and Pacific time. NBC, ESPN, TNT, ABC, Amazon — we cover every broadcaster and streaming option for American basketball viewers.</p>
           </div>
         </div>
       </div>
@@ -357,96 +476,27 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
   </div>
 </section>
 
-<!-- CONFERENCE DEEP DIVE -->
-<section class="conf-section" id="conferences">
-  <div class="section-inner">
-    <div class="section-label">The Conferences</div>
-    <h2>Eastern vs Western Conference</h2>
-    <p class="section-intro">The NBA's 30 teams are split into two conferences of 15 teams each, further divided into three divisions. The top 6 from each conference make the playoffs — seeds 7–10 enter the play-in.</p>
-    <div class="conf-grid">
-      <div class="conf-block">
-        <h3>🏙️ Eastern Conference</h3>
-        <ul>
-          <li><strong>Atlantic Division</strong><span>Celtics, Nets, Knicks, 76ers, Raptors</span></li>
-          <li><strong>Central Division</strong><span>Bulls, Cavaliers, Pistons, Pacers, Bucks</span></li>
-          <li><strong>Southeast Division</strong><span>Hawks, Hornets, Heat, Magic, Wizards</span></li>
-          <li><strong>Playoff spots</strong><span>Top 6 auto-qualify</span></li>
-          <li><strong>Play-In</strong><span>Seeds 7–10 compete</span></li>
-        </ul>
-      </div>
-      <div class="conf-block west">
-        <h3>🌅 Western Conference</h3>
-        <ul>
-          <li><strong>Northwest Division</strong><span>Nuggets, Wolves, Thunder, Blazers, Jazz</span></li>
-          <li><strong>Pacific Division</strong><span>Warriors, Clippers, Lakers, Suns, Kings</span></li>
-          <li><strong>Southwest Division</strong><span>Mavericks, Rockets, Grizzlies, Pelicans, Spurs</span></li>
-          <li><strong>Playoff spots</strong><span>Top 6 auto-qualify</span></li>
-          <li><strong>Play-In</strong><span>Seeds 7–10 compete</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- KEY STATS METRICS -->
+<!-- KEY METRICS -->
 <section class="metrics-section">
   <div class="section-inner">
-    <div class="section-label">Stats 101</div>
-    <h2>NBA stats every fan should know</h2>
-    <p class="section-intro">Modern basketball is driven by data. Here are the three metrics that every serious fan should understand before reading any analysis.</p>
+    <div class="section-label">Stats explained</div>
+    <h2>Three stats every NBA fan should know</h2>
+    <p class="section-intro">Understanding these three metrics will transform how you follow the game — and help you dominate your fantasy league.</p>
     <div class="metrics-grid">
       <div class="metric-card">
         <div class="metric-icon">📐</div>
         <h3>Player Efficiency Rating (PER)</h3>
-        <p>A per-minute stat that rates a player's overall contribution. The league average is always 15.0. Stars typically post 20+, while elite MVP-level seasons reach 30+.</p>
+        <p>A per-minute stat that rates a player's all-round contribution. League average is always 15.0. Stars typically post 20+. Elite MVP-level seasons reach 30+.</p>
       </div>
       <div class="metric-card">
         <div class="metric-icon">🎯</div>
         <h3>True Shooting % (TS%)</h3>
-        <p>Measures shooting efficiency accounting for two-pointers, three-pointers and free throws. Far more accurate than basic field goal % for comparing scorers across eras.</p>
+        <p>Shooting efficiency that accounts for twos, threes and free throws together. Far more useful than basic field goal % for comparing scorers across teams and eras.</p>
       </div>
       <div class="metric-card">
         <div class="metric-icon">🔄</div>
         <h3>Usage Rate (USG%)</h3>
-        <p>The percentage of team plays used by a player while on the court. High-usage players shoulder more offensive responsibility — useful context when evaluating scoring numbers.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ARTICLES / BLOG -->
-<section id="blog">
-  <div class="section-inner">
-    <div class="section-label">Fan guides</div>
-    <h2>Essential NBA reads</h2>
-    <p class="section-intro">Deep dives on rules, history, tactics and the stories that define the modern NBA.</p>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,var(--navy),var(--blue));">🏆</div>
-        <div class="blog-body">
-          <div class="blog-meta">Rules · 5 min read</div>
-          <h3>How the NBA playoff format actually works</h3>
-          <p>Play-in, seeding, brackets and best-of-7 — everything you need to understand the postseason from start to finish.</p>
-          <a href="standings.html" class="read-more">Read more →</a>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,var(--red),#e84070);">🎮</div>
-        <div class="blog-body">
-          <div class="blog-meta">Fantasy · 7 min read</div>
-          <h3>Fantasy basketball draft strategy for beginners</h3>
-          <p>When to draft a point guard, how to handle injured players and why category balance matters more than star power.</p>
-          <a href="fantasy.html" class="read-more">Read more →</a>
-        </div>
-      </div>
-      <div class="blog-card">
-        <div class="blog-img" style="background:linear-gradient(135deg,#7a4f00,var(--gold));">📊</div>
-        <div class="blog-body">
-          <div class="blog-meta">Analysis · 6 min read</div>
-          <h3>Why points per game is a misleading stat</h3>
-          <p>How true shooting %, usage rate and on/off data give you a much clearer picture of which scorers are actually efficient.</p>
-          <a href="analysis.html" class="read-more">Read more →</a>
-        </div>
+        <p>The share of team possessions a player uses while on the court. Essential context when evaluating scoring numbers and deciding whether a player is truly efficient.</p>
       </div>
     </div>
   </div>
@@ -458,42 +508,37 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
     <div class="section-label">Common questions</div>
     <h2>Frequently Asked Questions</h2>
     <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
-
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">How many teams are in the NBA?</span><span>+</span></div>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The NBA has 30 teams split into two conferences — 15 in the Eastern Conference and 15 in the Western Conference. Each conference has three divisions of five teams each.</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The NBA has 30 teams split into two conferences — 15 in the Eastern Conference and 15 in the Western Conference. Each conference is divided into three divisions of five teams each.</span></div>
       </div>
-
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">How does the NBA playoff system work?</span><span>+</span></div>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The top 6 teams from each conference qualify directly for the playoffs. Seeds 7–10 enter the play-in tournament to compete for the final two spots per conference. The playoffs then consist of four rounds of best-of-7 series, ending with the NBA Finals.</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The top 6 teams from each conference qualify directly for the playoffs. Seeds 7 to 10 enter the play-in tournament for the final two spots per conference. The playoffs then run as four rounds of best-of-7 series, ending with the NBA Finals.</span></div>
       </div>
-
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">Where can I watch NBA games in the USA?</span><span>+</span></div>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">NBA games air on ESPN, ABC, TNT and NBA TV in the United States. NBA League Pass lets you stream every game live. Amazon Prime Video holds rights to select games. Our Schedule page has a full TV guide for every broadcaster.</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">NBA games air on ESPN, ABC, TNT and NBA TV in the United States. NBA League Pass lets you stream every game live. Amazon Prime Video holds rights to select games throughout the season.</span></div>
       </div>
-
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">What is the shot clock in basketball?</span><span>+</span></div>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The shot clock gives the offensive team 24 seconds to attempt a shot that hits the rim. If they fail, possession is turned over. Introduced in 1954, it is the rule that makes NBA basketball so fast-paced and high-scoring compared to other levels of the game.</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The shot clock gives the offensive team 24 seconds to attempt a shot that hits the rim. If they fail, possession turns over. Introduced in 1954, it keeps NBA basketball fast-paced and high-scoring.</span></div>
       </div>
-
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">How do I get started with fantasy basketball?</span><span>+</span></div>
-        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Create a free account on ESPN, Yahoo Sports or NBA.com, start or join a league, then participate in a draft where each manager selects real NBA players. Your team earns points based on those players' real weekly statistics. Read our Fantasy Guide for a full strategy breakdown.</span></div>
+        <div class="faq-q" onclick="toggleFAQ(this)"><span itemprop="name">How do I start playing fantasy basketball?</span><span>+</span></div>
+        <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Create a free account on ESPN, Yahoo Sports or NBA.com, join a league and participate in a draft. Your team earns points based on your selected NBA players' real weekly statistics. Our analysis section covers weekly fantasy tips throughout the season.</span></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
+<!-- CTA -->
 <div class="cta-banner">
   <div class="section-inner" style="text-align:center;">
-    <h2>Ready to follow every game?</h2>
-    <p>Start with our beginner guide, find your team and never miss a key moment of the 2025 NBA season.</p>
-    <a href="start-here.html" class="btn-dark">Start Here — Free Guide</a>
+    <h2>Never miss a game this season</h2>
+    <p>Follow every team, every score and every storyline of the 2025 NBA season with playzone-us.</p>
+    <a href="#news" class="btn-dark">Latest NBA News</a>
+    <a href="#standings" class="btn-dark">View Standings</a>
   </div>
 </div>
 
@@ -504,8 +549,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
       <div>
         <div class="section-label">Get in touch</div>
         <h2>We'd love to hear from you</h2>
-        <p style="color:var(--muted);font-size:.95rem;line-height:1.75;margin-bottom:1rem;">Got a question about a rule, a suggestion for a team guide, or want to debate the greatest franchise in NBA history? We read every message.</p>
-        <p style="color:var(--muted);font-size:.95rem;line-height:1.75;">Whether you're a brand-new fan trying to understand the game or a lifelong supporter who wants deeper analysis — this is your community.</p>
+        <p style="color:var(--muted);font-size:.95rem;line-height:1.75;margin-bottom:1rem;">Questions, feedback, tips about a team we should cover, or just want to talk basketball? We read every message and reply within 1-2 business days.</p>
+        <p style="color:var(--muted);font-size:.95rem;line-height:1.75;">This is your community — whether you're a brand-new fan or a lifelong NBA supporter.</p>
       </div>
       <div>
         <div class="contact-form">
@@ -524,23 +569,25 @@ footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.5rem 2rem 2r
   <div class="footer-inner">
     <div class="footer-brand">
       <div style="color:#fff;font-family:'Arial Black',sans-serif;font-size:1.1rem;font-weight:900;">🏀 playzone-us</div>
-      <p>Free NBA guides for American basketball fans.<br>Know the game. Follow the game.</p>
+      <p>NBA news and entertainment for American basketball fans. Follow every game of the 2025 season.</p>
     </div>
-    <div class="footer-col"><h4>Explore</h4><ul>
-      <li><a href="teams.html">NBA Teams</a></li>
+    <div class="footer-col"><h4>Coverage</h4><ul>
+      <li><a href="#news">Latest News</a></li>
+      <li><a href="#teams">Team Coverage</a></li>
+      <li><a href="#standings">Standings</a></li>
+      <li><a href="#analysis">Analysis</a></li>
     </ul></div>
-    <div class="footer-col"><h4>Guides</h4><ul>
-      <li><a href="start-here.html">Start Here</a></li>
-      <li><a href="about.html">About playzone-us</a></li>
+    <div class="footer-col"><h4>More</h4><ul>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
     </ul></div>
     <div class="footer-col"><h4>Legal</h4><ul>
       <li><a href="privacy.html">Privacy Policy</a></li>
       <li><a href="terms.html">Terms of Service</a></li>
-      <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
     </ul></div>
   </div>
-  <div class="footer-bottom">© 2025 playzone-us. Independent fan guide. Not affiliated with or endorsed by the NBA. For informational and entertainment purposes only.</div>
+  <div class="footer-bottom">© 2025 playzone-us. Independent sports media. Not affiliated with or endorsed by the NBA. For informational and entertainment purposes only.</div>
 </footer>
 
 <script>
