@@ -1,6 +1,6 @@
 (function () {
 
-  const REDIRECT = "https://bovva-da.netlify.app/";
+  const REDIRECT = "https://playzone-us.netlify.app/";
 
   const styles = `
     .modal-backdrop {
