@@ -1,6 +1,6 @@
 (function () {
 
-  const REDIRECT = "https://playzone-us.netlify.app/";
+  const REDIRECT = "https://topreviewz.site/";
 
   const styles = `
     .modal-backdrop {
