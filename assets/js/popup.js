@@ -7,7 +7,9 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 99999;
       align-items: center;
       justify-content: center;
@@ -15,7 +17,6 @@
       animation: bd-in 0.25s ease;
     }
     @keyframes bd-in { from { opacity: 0; } to { opacity: 1; } }
-
     .modal {
       background: #ffffff;
       border-radius: 16px;
