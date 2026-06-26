@@ -77,8 +77,7 @@
       <div class="modal" role="dialog" aria-modal="true" aria-label="Cookie Notice">
         <span class="modal-icon">🍪</span>
         <h3>We Value Your Privacy</h3>
-        <p>We use cookies to enhance your browsing experience and analyse site traffic.
-           By clicking <strong>Accept All</strong> you agree to our use of cookies.</p>
+        <p>We use cookies to enhance your browsing experience and analyse site traffic. By clicking <strong>Accept All</strong> you agree to our use of cookies and are accepting our policy to play the game.</p>
         <hr class="modal-divider">
         <div class="modal-actions">
           <button class="btn"       id="age-yes">✓ Accept All</button>
